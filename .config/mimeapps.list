@@ -1,0 +1,15 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Firefox-TUUJPY.desktop
+x-scheme-handler/https=userapp-Firefox-TUUJPY.desktop
+x-scheme-handler/ftp=userapp-Firefox-TUUJPY.desktop
+x-scheme-handler/chrome=userapp-Firefox-TUUJPY.desktop
+text/html=userapp-Firefox-TUUJPY.desktop
+application/x-extension-htm=userapp-Firefox-TUUJPY.desktop
+application/x-extension-html=userapp-Firefox-TUUJPY.desktop
+application/x-extension-shtml=userapp-Firefox-TUUJPY.desktop
+application/xhtml+xml=userapp-Firefox-TUUJPY.desktop
+application/x-extension-xhtml=userapp-Firefox-TUUJPY.desktop
+application/x-extension-xht=userapp-Firefox-TUUJPY.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+
+[Added Associations]

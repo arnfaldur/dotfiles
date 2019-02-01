@@ -1,0 +1,47 @@
+# GIMP sessionrc
+# 
+# This file takes session-specific info (that is info, you want to keep
+# between two GIMP sessions).  You are not supposed to edit it manually, but
+# of course you can do.  The sessionrc will be entirely rewritten every time
+# you quit GIMP.  If this file isn't found, defaults are used.
+
+(session-info "toplevel"
+    (factory-entry "gimp-empty-image-window")
+    (position 63 176)
+    (size 3840 2115)
+    (open-on-exit))
+(session-info "toplevel"
+    (factory-entry "gimp-single-image-window")
+    (position 160 70)
+    (size 1140 780))
+(session-info "toplevel"
+    (factory-entry "gimp-image-new-dialog")
+    (position 1721 933))
+(session-info "toplevel"
+    (factory-entry "gimp-toolbox-color-dialog")
+    (position 0 0))
+(session-info "toplevel"
+    (factory-entry "gimp-file-save-dialog")
+    (position 1344 651)
+    (size 1140 855))
+(session-info "toplevel"
+    (factory-entry "gimp-file-export-dialog")
+    (position 1290 670)
+    (size 1140 855))
+(session-info "toplevel"
+    (factory-entry "gimp-curves-tool-dialog")
+    (position 805 714)
+    (size 378 535))
+(session-info "toplevel"
+    (factory-entry "gimp-scale-tool-dialog")
+    (position 1716 251))
+(session-info "toplevel"
+    (factory-entry "gimp-file-open-dialog")
+    (position 1342 625)
+    (size 1140 855))
+
+(hide-docks no)
+(single-window-mode no)
+(last-tip-shown 0)
+
+# end of sessionrc

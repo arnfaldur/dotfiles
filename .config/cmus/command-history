@@ -1,0 +1,12 @@
+quit
+s
+stop
+help
+save
+set buffer_seconds=5
+set buffer_seconds=30
+set buffer_seconds=100
+pause
+play
+set mouse=true
+q

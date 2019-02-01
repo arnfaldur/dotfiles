@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+#EFFECT=(-depth 2 -scale 10% -scale 1000%)
+#EFFECT=(-depth 2 -filter Point -resize '5%' -resize '2000%')
+EFFECT=()
+FILE=(~/.config/i3/lock)
+DATE=$(date +"%y-%m-%d-%H-%M-%S")
+
+ffmpeg -y -loglevel 0 -t 1 -s 3840x2160 -f x11grab -i :0.0 $FILE.bmp ||
+    cd ~/.config/i3/ &&
+./screenshotmangler $FILE.bmp $FILE.bmp &&
+#import -window root ${EFFECT[@]} ~/.config/i3/lock.jpg &&
+#scrot 'lock.png' -e 'mv $f ~/.config/i3/' &&
+#convert ~/.config/i3/lock.bmp -quality 1 -filter Point -resize '200%' ~/.config/i3/lock.jpg &&
+#convert $FILE.bmp -quality 100 $FILE.png &&
+#convert $FILE.bmp ${EFFECT[@]} $FILE.bmp &&
+#bpgenc -m 1 -q 51 -o $FILE.bpg $FILE.jpg &&
+#bpgdec -o $FILE.png $FILE.bpg &&
+convert $FILE.bmp ${EFFECT[@]} -define PNG:compression-level=0 -define PNG:compression-strategy=0 -define PNG:compression-filter=3 $FILE.png &&
+i3lock -u -p win -i ~/.config/i3/lock.png &
+convert $FILE.bmp ${EFFECT[@]} -define PNG:compression-level=9 -define PNG:compression-strategy=2 -define PNG:compression-filter=2 $DATE.png &&
+cp $DATE.png ~/Pictures/Lockscreens/$DATE.png &&

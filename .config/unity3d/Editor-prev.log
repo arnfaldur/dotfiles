@@ -1,0 +1,548 @@
+mono profile = '/opt/Unity/Editor/Data/Mono/lib/mono/2.0'
+Initialize mono
+Mono path[0] = '/opt/Unity/Editor/Data/Managed'
+Mono path[1] = '/opt/Unity/Editor/Data/Mono/lib/mono/2.0'
+Mono path[2] = '/opt/Unity/Editor/Data/UnityScript'
+Mono path[3] = '/opt/Unity/Editor/Data/Mono/lib/mono/2.0'
+Mono config path = '/opt/Unity/Editor/Data/Mono/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56238
+Desktop is 3840 x 2160 @ 60 Hz
+
+Selecting FBConfig
+GLX_FBCONFIG_ID=151
+GLX_BUFFER_SIZE=32
+GLX_DOUBLEBUFFER=1
+GLX_RED_SIZE=8
+GLX_GREEN_SIZE=8
+GLX_BLUE_SIZE=8
+GLX_ALPHA_SIZE=8
+GLX_DEPTH_SIZE=24
+GLX_STENCIL_SIZE=8
+GLX_SAMPLES_ARB=0
+GLX_SAMPLE_BUFFERS_ARB=0
+GLX_STEREO=0
+GLX_CONFIG_CAVEAT=NONE
+
+
+LICENSE SYSTEM [20161020 9:2:49] No start/stop license dates set
+
+LICENSE SYSTEM [20161020 9:2:49] Next license update check is after 2016-10-17T05:13:07
+
+ATTENTION: default value of option force_s3tc_enable overridden by environment.
+[1020/090250:ERROR:gpu_process_transport_factory.cc(402)] Failed to establish GPU channel.
+[1020/090600:ERROR:browser_main_loop.cc(207)] Gtk: gtk_file_chooser_default_set_current_name: assertion 'impl->action == GTK_FILE_CHOOSER_ACTION_SAVE || impl->action == GTK_FILE_CHOOSER_ACTION_CREATE_FOLDER' failed
+[1020/090620:ERROR:browser_main_loop.cc(207)] Gtk: gtk_file_chooser_default_set_current_name: assertion 'impl->action == GTK_FILE_CHOOSER_ACTION_SAVE || impl->action == GTK_FILE_CHOOSER_ACTION_CREATE_FOLDER' failed
+IsTimeToCheckForNewEditor: Update time 0 current 1476954400
+/home/arnaldur/Dropbox/Education/verkefnalausnir/verk18/verk18
+UpdateMenuTitleForLanguage: 10
+Using libudev for joystick management
+
+
+Importing game controller configs
+Audio: FMOD Profiler initialized on port 54900
+AudioManager: Using ALSA: default
+Loading GUID <-> Path mappings...0.000250 seconds
+Loading Asset Database...0.000004 seconds
+AssetDatabase consistency checks...0.000030 seconds
+Initialize engine version: 5.4.1f1 (c7df0bdc77c2)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Forcing GfxDevice: OpenGL
+GLX Extensions: GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap GLX_INTEL_swap_event GLX_EXT_buffer_age 
+OpenGL:
+    Version:  OpenGL 3.0 [3.0 Mesa 12.0.3]
+    Renderer: Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) 
+    Vendor:   Intel Open Source Technology Center
+    VRAM:     3072 MB
+    Extensions: GL_ARB_multisample GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_polygon_offset GL_EXT_subtexture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_texture GL_EXT_texture3D GL_IBM_rasterpos_clip GL_ARB_point_parameters GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_framebuffer_sRGB GL_ARB_multitexture GL_EXT_framebuffer_sRGB GL_IBM_multimode_draw_arrays GL_IBM_texture_mirrored_repeat GL_3DFX_texture_compression_FXT1 GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod_bias GL_INGR_blend_func_separate GL_NV_blend_square GL_NV_light_max_exponent GL_NV_texgen_reflection GL_NV_texture_env_combine4 GL_S3_s3tc GL_SUN_multi_draw_arrays GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_EXT_framebuffer_object GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_MESA_window_pos GL_NV_packed_depth_stencil GL_NV_texture_rectangle GL_ARB_depth_texture GL_ARB_occlusion_query GL_ARB_shadow GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_ARB_window_pos GL_EXT_stencil_two_side GL_EXT_texture_cube_map GL_NV_depth_clamp GL_APPLE_packed_pixels GL_APPLE_vertex_array_object GL_ARB_draw_buffers GL_ARB_fragment_program GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_vertex_program GL_ARB_vertex_shader GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_MESA_pack_invert GL_NV_primitive_restart GL_ARB_depth_clamp GL_ARB_fragment_program_shadow GL_ARB_half_float_pixel GL_ARB_occlusion_query2 GL_ARB_point_sprite GL_ARB_shading_language_100 GL_ARB_sync GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ATI_blend_equation_separate GL_EXT_blend_equation_separate GL_OES_read_format GL_ARB_color_buffer_float GL_ARB_pixel_buffer_object GL_ARB_texture_compression_rgtc GL_ARB_texture_float GL_ARB_texture_rectangle GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_shared_exponent GL_ARB_framebuffer_object GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_packed_depth_stencil GL_APPLE_object_purgeable GL_ARB_vertex_array_object GL_ATI_separate_stencil GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_gpu_program_parameters GL_EXT_texture_array GL_EXT_texture_integer GL_EXT_texture_sRGB_decode GL_EXT_timer_query GL_OES_EGL_image GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_map_buffer_range GL_ARB_texture_rg GL_ARB_texture_swizzle GL_ARB_vertex_array_bgra GL_EXT_texture_swizzle GL_EXT_vertex_array_bgra GL_NV_conditional_render GL_AMD_conservative_depth GL_AMD_draw_buffers_blend GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_stencil_export GL_ARB_ES2_compatibility GL_ARB_blend_func_extended GL_ARB_debug_output GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_explicit_attrib_location GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_shader_stencil_export GL_ARB_shader_texture_lod GL_ARB_texture_cube_map_array GL_ARB_texture_gather GL_ARB_texture_multisample GL_ARB_texture_query_lod GL_ARB_texture_rgb10_a2ui GL_ARB_uniform_buffer_object GL_ARB_vertex_type_2_10_10_10_rev GL_EXT_provoking_vertex GL_EXT_texture_snorm GL_MESA_texture_signed_rgba GL_NV_texture_barrier GL_ARB_get_program_binary GL_ARB_robustness GL_ARB_separate_shader_objects GL_ARB_shader_bit_encoding GL_ARB_shader_precision GL_ARB_texture_compression_bptc GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_internalformat_query GL_ARB_map_buffer_alignment GL_ARB_shader_atomic_counters GL_ARB_shader_image_load_store GL_ARB_shading_language_420pack GL_ARB_shading_language_packing GL_ARB_texture_storage GL_ARB_transform_feedback_instanced GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_transform_feedback GL_AMD_shader_trinary_minmax GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_clear_buffer_object GL_ARB_compute_shader GL_ARB_copy_image GL_ARB_explicit_uniform_location GL_ARB_framebuffer_no_attachments GL_ARB_invalidate_subdata GL_ARB_program_interface_query GL_ARB_robust_buffer_access_behavior GL_ARB_shader_image_size GL_ARB_shader_storage_buffer_object GL_ARB_stencil_texturing GL_ARB_texture_query_levels GL_ARB_texture_storage_multisample GL_ARB_texture_view GL_ARB_vertex_attrib_binding GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_ARB_buffer_storage GL_ARB_clear_texture GL_ARB_internalformat_query2 GL_ARB_multi_bind GL_ARB_query_buffer_object GL_ARB_seamless_cubemap_per_texture GL_ARB_shader_draw_parameters GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_stencil8 GL_ARB_vertex_type_10f_11f_11f_rev GL_EXT_shader_integer_mix GL_ARB_clip_control GL_ARB_conditional_render_inverted GL_ARB_cull_distance GL_ARB_derivative_control GL_ARB_get_texture_sub_image GL_ARB_pipeline_statistics_query GL_ARB_shader_texture_image_samples GL_ARB_texture_barrier GL_EXT_polygon_offset_clamp GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_ARB_shader_clock GL_EXT_shader_samples_identical 
+GLX Extensions: GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap GLX_INTEL_swap_event GLX_EXT_buffer_age 
+Setting maxVSyncInterval to 4
+GL: Detected 3072 MB VRAM
+Begin MonoManager ReloadAssembly
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEngine.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.Locator.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.DataContract.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Core.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.IvyParser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Xml.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Configuration.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll (this message is harmless)
+Initializing Unity.PackageManager (PackageManager) v5.4.1 for Unity v5.4.1f1
+Setting Android v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
+Setting StandaloneLinux v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
+Setting StandaloneOSXIntel v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport
+Setting SamsungTV v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer
+Setting Tizen v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer
+Setting WebGL v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport
+Setting StandaloneWindows v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+Setting BB10 v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport
+Setting Advertisements v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements
+  UnityEngine.Advertisements.dll (Extension) GUID: 739bbd9f364b4268874f9fd86ab3beef
+  Editor/UnityEditor.Advertisements.dll (Extension) GUID: 97decbdab0634cdd991f8d23ddf0dead
+Setting EditorTestsRunner v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner
+  Editor/nunit.framework.dll (Extension) GUID: 7cbab2be89b54486bbd23a6fe637d30e
+  Editor/UnityEditor.EditorTestsRunner.dll (Extension) GUID: 3c0ad459c1534645b5d603b7cc258f97
+Setting GUISystem v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem
+  UnityEngine.UI.dll (Extension) GUID: f5f67c52d1564df4a8936ccd202a3bd8
+  Editor/UnityEditor.UI.dll (Extension) GUID: 80a3616ca19596e4da0f10f14d241e9f
+Setting UNetHLAPI v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking
+  UnityEngine.Networking.dll (Extension) GUID: 870353891bb340e2b2a9c8707e7419ba
+  Editor/UnityEditor.Networking.dll (Extension) GUID: 5f32cd94baa94578a686d4b9d6b660f7
+Setting TreeEditor v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor
+  Editor/UnityEditor.TreeEditor.dll (Extension) GUID: adebbd281f1a4ef3a30be7f21937e02f
+Setting UnityAnalytics v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics
+  UnityEngine.Analytics.dll (Extension) GUID: 852E56802EB941638ACBB491814497B0
+Setting UnityPurchasing v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing
+  UnityEngine.Purchasing.dll (Extension) GUID: 8E0CD8ED44D4412CBE0642067ABC9E44
+Registering custom dll's ...
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.007146 seconds.
+Platform assembly: /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.interfaces.dll (this message is harmless)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Platform assembly: /opt/Unity/Editor/Data/Managed/Mono.Cecil.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.SerializationLogic.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/ICSharpCode.NRefactory.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Xml.Linq.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll (this message is harmless)
+Mono: successfully reloaded assembly
+- Completed reload, in  0.533 seconds
+Registering platform support modules:
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Compiler.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Parser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.Lang.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Mono.Security.dll (this message is harmless)
+Registered platform support modules in: 0.1106349s.
+Native extension for OSXStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Native extension for SamsungTV target not found
+Native extension for Tizen target not found
+Loading native library: UnityEditor.iOS.Native at /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Native.so
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Downloading http://update.unity3d.com/5.4/ivy.xml to /tmp/unity/204dcd82-55a3-40b8-b4bd-baf762960bdb/ivy.xml
+Native extension for Android target not found
+Task failed: Verifier Task
+Reloading assemblies after successful script compilation.
+Begin MonoManager ReloadAssembly
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEngine.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.Locator.dll (this message is harmless)
+Registering custom dll's ...
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Core.dll (this message is harmless)
+Registered in 0.007818 seconds.
+Platform assembly: /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.interfaces.dll (this message is harmless)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.DataContract.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Mono.Cecil.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.SerializationLogic.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/ICSharpCode.NRefactory.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Xml.Linq.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.IvyParser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.dll (this message is harmless)
+Mono: successfully reloaded assembly
+- Completed reload, in  0.389 seconds
+Initializing Unity.PackageManager (PackageManager) v5.4.1 for Unity v5.4.1f1
+Setting Android v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
+Setting StandaloneLinux v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
+Setting StandaloneOSXIntel v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport
+Setting SamsungTV v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer
+Setting Tizen v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer
+Setting WebGL v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport
+Setting StandaloneWindows v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+Setting BB10 v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport
+Setting Advertisements v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements
+  UnityEngine.Advertisements.dll (Extension) GUID: 739bbd9f364b4268874f9fd86ab3beef
+  Editor/UnityEditor.Advertisements.dll (Extension) GUID: 97decbdab0634cdd991f8d23ddf0dead
+Setting EditorTestsRunner v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner
+  Editor/nunit.framework.dll (Extension) GUID: 7cbab2be89b54486bbd23a6fe637d30e
+  Editor/UnityEditor.EditorTestsRunner.dll (Extension) GUID: 3c0ad459c1534645b5d603b7cc258f97
+Setting GUISystem v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem
+  UnityEngine.UI.dll (Extension) GUID: f5f67c52d1564df4a8936ccd202a3bd8
+  Editor/UnityEditor.UI.dll (Extension) GUID: 80a3616ca19596e4da0f10f14d241e9f
+Setting UNetHLAPI v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking
+  UnityEngine.Networking.dll (Extension) GUID: 870353891bb340e2b2a9c8707e7419ba
+  Editor/UnityEditor.Networking.dll (Extension) GUID: 5f32cd94baa94578a686d4b9d6b660f7
+Setting TreeEditor v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor
+  Editor/UnityEditor.TreeEditor.dll (Extension) GUID: adebbd281f1a4ef3a30be7f21937e02f
+Setting UnityAnalytics v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics
+  UnityEngine.Analytics.dll (Extension) GUID: 852E56802EB941638ACBB491814497B0
+Setting UnityPurchasing v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing
+  UnityEngine.Purchasing.dll (Extension) GUID: 8E0CD8ED44D4412CBE0642067ABC9E44
+Registering platform support modules:
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Compiler.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Parser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.Lang.dll (this message is harmless)
+Registered platform support modules in: 0.046277s.
+Native extension for OSXStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Native extension for SamsungTV target not found
+Native extension for Tizen target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Validating Project structure ... 0.000312 seconds.
+Shader import version has changed; will reimport all shaders...
+Upgrading shader files ...0.000020 seconds.
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.084469 seconds
+Updating Assets - GUID: 00000000000000001000000000000000...
+ done. [Time: 32.792000 ms] 
+Updating ProjectSettings/InputManager.asset - GUID: 00000000000000002000000000000000...
+ done. [Time: 18.584000 ms] 
+Updating ProjectSettings/TagManager.asset - GUID: 00000000000000003000000000000000...
+ done. [Time: 18.573999 ms] 
+Updating ProjectSettings/ProjectSettings.asset - GUID: 00000000000000004000000000000000...
+ done. [Time: 23.712000 ms] 
+Updating ProjectSettings/NavMeshAreas.asset - GUID: 00000000000000004100000000000000...
+ done. [Time: 19.271999 ms] 
+Updating Library/BuildPlayer.prefs - GUID: 00000000000000005000000000000000...
+ done. [Time: 17.902000 ms] 
+Updating ProjectSettings/Physics2DSettings.asset - GUID: 00000000000000005100000000000000...
+ done. [Time: 16.881001 ms] 
+Updating ProjectSettings/AudioManager.asset - GUID: 00000000000000006000000000000000...
+Audio: FMOD Profiler initialized on port 54900
+AudioManager: Using ALSA: default
+ done. [Time: 63.527004 ms] 
+Updating ProjectSettings/GraphicsSettings.asset - GUID: 00000000000000006100000000000000...
+ done. [Time: 17.959000 ms] 
+Updating ProjectSettings/TimeManager.asset - GUID: 00000000000000007000000000000000...
+ done. [Time: 21.036999 ms] 
+Updating ProjectSettings/ClusterInputManager.asset - GUID: 00000000000000007100000000000000...
+ done. [Time: 16.212000 ms] 
+Updating ProjectSettings/DynamicsManager.asset - GUID: 00000000000000008000000000000000...
+ done. [Time: 16.170000 ms] 
+Updating ProjectSettings/UnityAdsSettings.asset - GUID: 00000000000000008100000000000000...
+ done. [Time: 17.792000 ms] 
+Updating ProjectSettings/QualitySettings.asset - GUID: 00000000000000009000000000000000...
+ done. [Time: 15.151000 ms] 
+Updating ProjectSettings/NetworkManager.asset - GUID: 0000000000000000a000000000000000...
+ done. [Time: 18.118999 ms] 
+Updating ProjectSettings/UnityConnectSettings.asset - GUID: 0000000000000000a100000000000000...
+ done. [Time: 16.233999 ms] 
+Updating ProjectSettings/EditorBuildSettings.asset - GUID: 0000000000000000b000000000000000...
+ done. [Time: 14.662001 ms] 
+Updating ProjectSettings/EditorSettings.asset - GUID: 0000000000000000c000000000000000...
+ done. [Time: 14.672000 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll - GUID: 3c0ad459c1534645b5d603b7cc258f97...
+ done. [Time: 67.497002 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll - GUID: 5f32cd94baa94578a686d4b9d6b660f7...
+ done. [Time: 82.778999 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll - GUID: 739bbd9f364b4268874f9fd86ab3beef...
+ done. [Time: 32.350998 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll - GUID: 7cbab2be89b54486bbd23a6fe637d30e...
+ done. [Time: 42.189999 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll - GUID: 80a3616ca19596e4da0f10f14d241e9f...
+ done. [Time: 68.778999 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll - GUID: 852e56802eb941638acbb491814497b0...
+ done. [Time: 21.438002 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll - GUID: 870353891bb340e2b2a9c8707e7419ba...
+ done. [Time: 57.445000 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll - GUID: 8e0cd8ed44d4412cbe0642067abc9e44...
+ done. [Time: 29.003000 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll - GUID: 97decbdab0634cdd991f8d23ddf0dead...
+ done. [Time: 20.602001 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll - GUID: adebbd281f1a4ef3a30be7f21937e02f...
+ done. [Time: 36.577999 ms] 
+Updating /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll - GUID: f5f67c52d1564df4a8936ccd202a3bd8...
+ done. [Time: 104.084000 ms] 
+Reloading assemblies after forced synchronous recompile.
+Begin MonoManager ReloadAssembly
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEngine.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.Locator.dll (this message is harmless)
+Registering custom dll's ...
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Core.dll (this message is harmless)
+Registered in 0.008590 seconds.
+Platform assembly: /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PackageManager/Unity/PackageManager/5.4.1/Unity.PackageManager.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll into Unity Child Domain
+Non platform assembly: /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer/UnityEditor.Tizen.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll (this message is harmless)
+Loading /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll into Unity Child Domain
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.interfaces.dll (this message is harmless)
+Refreshing native plugins compatible for Editor in 23.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.DataContract.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Mono.Cecil.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.SerializationLogic.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/ICSharpCode.NRefactory.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/System.Xml.Linq.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/Unity.IvyParser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Managed/nunit.core.dll (this message is harmless)
+Mono: successfully reloaded assembly
+- Completed reload, in  0.398 seconds
+Initializing Unity.PackageManager (PackageManager) v5.4.1 for Unity v5.4.1f1
+Setting Android v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
+Setting StandaloneLinux v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/LinuxStandaloneSupport
+Setting StandaloneOSXIntel v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport
+Setting SamsungTV v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/STVPlayer
+Setting Tizen v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/TizenPlayer
+Setting WebGL v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WebGLSupport
+Setting StandaloneWindows v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+Setting BB10 v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/PlaybackEngines/iOSSupport
+Setting Advertisements v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements
+  UnityEngine.Advertisements.dll (Extension) GUID: 739bbd9f364b4268874f9fd86ab3beef
+  Editor/UnityEditor.Advertisements.dll (Extension) GUID: 97decbdab0634cdd991f8d23ddf0dead
+Setting EditorTestsRunner v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner
+  Editor/nunit.framework.dll (Extension) GUID: 7cbab2be89b54486bbd23a6fe637d30e
+  Editor/UnityEditor.EditorTestsRunner.dll (Extension) GUID: 3c0ad459c1534645b5d603b7cc258f97
+Setting GUISystem v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem
+  UnityEngine.UI.dll (Extension) GUID: f5f67c52d1564df4a8936ccd202a3bd8
+  Editor/UnityEditor.UI.dll (Extension) GUID: 80a3616ca19596e4da0f10f14d241e9f
+Setting UNetHLAPI v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/Networking
+  UnityEngine.Networking.dll (Extension) GUID: 870353891bb340e2b2a9c8707e7419ba
+  Editor/UnityEditor.Networking.dll (Extension) GUID: 5f32cd94baa94578a686d4b9d6b660f7
+Setting TreeEditor v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor
+  Editor/UnityEditor.TreeEditor.dll (Extension) GUID: adebbd281f1a4ef3a30be7f21937e02f
+Setting UnityAnalytics v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics
+  UnityEngine.Analytics.dll (Extension) GUID: 852E56802EB941638ACBB491814497B0
+Setting UnityPurchasing v5.4.1 for Unity v5.4.1f1 to /opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing
+  UnityEngine.Purchasing.dll (Extension) GUID: 8E0CD8ED44D4412CBE0642067ABC9E44
+Registering platform support modules:
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Compiler.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/Boo.Lang.Parser.dll (this message is harmless)
+Platform assembly: /opt/Unity/Editor/Data/Mono/lib/mono/2.0/UnityScript.Lang.dll (this message is harmless)
+Registered platform support modules in: 0.0390757s.
+Native extension for OSXStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Native extension for SamsungTV target not found
+Native extension for Tizen target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 8.9 MB.
+System memory in use after: 8.9 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 447.
+Total: 1.109000 ms (FindLiveObjects: 0.049000 ms CreateObjectMapping: 0.010000 ms MarkObjects: 0.992000 ms  DeleteObjects: 0.055000 ms)
+
+Refreshing native plugins compatible for Editor in 28.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 1.740908s, AssetImport time: 1.625282s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.001127 seconds (Nothing changed)
+Determining assets that need to be reimported for target platform ... 0.008634 seconds.
+
+Hashing assets ... 0.000 seconds
+  file open: 0.000 seconds (0 files)
+  file read: 0.000 seconds (0.000 MB)
+  hash: 0.000 seconds
+Refreshing native plugins compatible for Editor in 3.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 0.012639s, AssetImport time: 0.000000s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Updating ProjectSettings/ProjectSettings.asset - GUID: 00000000000000004000000000000000...
+ done. [Time: 28.689001 ms] 
+Refreshing native plugins compatible for Editor in 3.93 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 0.063505s, AssetImport time: 0.040156s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Warming cache for 29 main assets: 0.010850 seconds elapsed
+Initializing Unity extensions:
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll' 
+ '/opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll' 
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 8.2 MB.
+System memory in use after: 8.3 MB.
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 514.
+Total: 1.059000 ms (FindLiveObjects: 0.048000 ms CreateObjectMapping: 0.006000 ms MarkObjects: 0.991000 ms  DeleteObjects: 0.012000 ms)
+
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+[1020/090646:ERROR:browser_main_loop.cc(207)] GLib-GObject: invalid cast from 'GtkDrawingArea' to 'GtkDialog'
+[1020/090646:ERROR:browser_main_loop.cc(207)] Gtk: IA__gtk_dialog_get_content_area: assertion 'GTK_IS_DIALOG (dialog)' failed
+Using libudev for joystick management
+
+
+Importing game controller configs
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.019292 seconds
+Updating Library/BuildPlayer.prefs - GUID: 00000000000000005000000000000000...
+ done. [Time: 7.654000 ms] 
+Refreshing native plugins compatible for Editor in 3.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 0.046808s, AssetImport time: 0.022855s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.000199 seconds (Nothing changed)
+Updating ProjectSettings/ProjectSettings.asset - GUID: 00000000000000004000000000000000...
+ done. [Time: 7.905000 ms] 
+Refreshing native plugins compatible for Editor in 3.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 0.055716s, AssetImport time: 0.020113s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.019035 seconds
+Updating Library/BuildPlayer.prefs - GUID: 00000000000000005000000000000000...
+ done. [Time: 7.386000 ms] 
+Refreshing native plugins compatible for Editor in 3.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+----- Total AssetImport time: 0.045561s, AssetImport time: 0.022352s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Cleanup mono
+debugger-agent: Unable to listen on 6
+/home/builduser/buildslave/unity/build/Editor/Platform/Linux/UsbDevices.cpp:UsbDevicesQuery
+/home/builduser/buildslave/unity/build/Editor/Platform/Linux/UndoPlatformDependent.cpp:SetUndoMenuNamePlatformDependent
+[usbmuxd] Stop listen thread
+[usbmuxd] Listen thread exiting
+process_set_termination_details: error looking up process handle 0x401

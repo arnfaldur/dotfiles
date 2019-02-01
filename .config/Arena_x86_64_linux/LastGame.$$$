@@ -1,0 +1,19 @@
+[LastMove "0"]
+[Event "Computer chess game"]
+[Site "archlinux"]
+[Date "2018.04.10"]
+[Round "?"]
+[White "arnaldur"]
+[Black "Hermann Linux 2.7.1 64 bit"]
+[Result "*"]
+[BlackElo "2000"]
+[Time "18:39:45"]
+[WhiteElo "2400"]
+[TimeControl "300"]
+[Termination "unterminated"]
+[PlyCount "0"]
+[WhiteType "human"]
+[BlackType "program"]
+
+ *
+

@@ -1,0 +1,19 @@
+[LastMove "32"]
+[Event "Computer Schach Partie"]
+[Site "archlinux"]
+[Date "2018.04.10"]
+[Round "?"]
+[White "arnaldur"]
+[Black "?"]
+[Result "*"]
+[BlackElo "2000"]
+[Time "18:38:14"]
+[WhiteElo "2400"]
+[TimeControl "300"]
+[Termination "unterminated"]
+[PlyCount "0"]
+[WhiteType "human"]
+[BlackType "program"]
+
+ *
+
