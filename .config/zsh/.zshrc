@@ -32,9 +32,8 @@ bindkey "^n" history-substring-search-down
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-autoload -Uz promptinit
-promptinit
-prompt adam2
+autoload -U promptinit; promptinit
+prompt spaceship
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -48,7 +47,8 @@ bindkey '^[^?' backward-kill-dir
 
 # aliases
 alias ls="ls --color=auto"
-alias emacs="emacs -nw"
+alias em="emacs -nw"
+alias wem="emacs"
 alias guimacs="emacs"
 
 alias reload="source ~/.config/zsh/.zshrc"
@@ -58,6 +58,10 @@ alias pacfind="pacman -Ss"
 alias pacafind="pacaur -Ss"
 alias pacupdate="sudo pacman -Syu"
 alias pacaupdate="pacaur -Syu"
+
+# pacman utils
+alias pacsizes="LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h"
+
 
 alias hs="ghc -dynamic"
 
@@ -69,7 +73,8 @@ alias reloadwifi="systemctl restart netctl-auto@wlp3s0.service"
 
 alias firefox="firefox-developer-edition"
 
-setxkbmap -layout us,is -option grp:win_space_toggle -option compose:menu
+#setxkbmap -layout is -option grp:win_space_toggle -option compose:menu
+setxkbmap -layout is -option compose:menu
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh

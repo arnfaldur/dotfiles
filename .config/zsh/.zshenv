@@ -18,3 +18,5 @@ export JULIA_HOME=$HOME/Programming/Julia/julia/usr/bin
 export GST_PLUGIN_PATH=$HOME/Programming/Kaldi/kaldi/src/gst-plugin
 
 export SC2PATH=$HOME/Programming/projects/Starcraft2/StarCraftII
+
+xset r rate 256 32

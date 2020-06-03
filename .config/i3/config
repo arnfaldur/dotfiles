@@ -194,8 +194,6 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 exec xbanish
 exec dropbox
 exec compton
-exec kbdd
-exec xset r rate 192 48
 
 # Keyboard map switcher
 #bindsym Mod4+space setxkbmap us
@@ -232,6 +230,7 @@ client.background       #ffffff
 for_window [class=".*Qt.*"] floating enable
 for_window [class=".*Skil.*"] floating enable
 for_window [title=".*ImageView.*"] floating enable
+for_window [title="Processing.jl"] floating enable
 
 bindsym $mod+bracketright exec xbacklight -inc 5 && pkill -SIGRTMIN+10 i3blocks
 bindsym $mod+bracketleft exec xbacklight -dec 5 && pkill -SIGRTMIN+10 i3blocks
