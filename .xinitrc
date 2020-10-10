@@ -34,6 +34,8 @@ fi
 
 #User configuration
 
+#exec xrandr --dpi 128
+
 #xbindkeys
 
 exec i3
