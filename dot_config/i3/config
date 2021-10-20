@@ -257,8 +257,15 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Startup applications
 exec xbanish
+{{- if eq .chezmoi.hostname "Belgur" }}
 exec redshift
+{{- end }}
 exec emacs --daemon
+
+# Keyboard map switcher
+#bindsym Mod4+space setxkbmap us
+
+mouse_warping none
 
 # Workspace assignments
 
@@ -270,7 +277,7 @@ exec emacs --daemon
 
 # Appearance
 
-new_window pixel 1
+new_window pixel {{ .i3.frame_thickness }}
 
 hide_edge_borders both
 
