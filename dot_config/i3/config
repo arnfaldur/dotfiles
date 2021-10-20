@@ -38,6 +38,7 @@ bindsym $os+d        exec --no-startup-id rofi -show drun -show-icons
 bindsym $os+Shift+d  exec --no-startup-id rofi -show run -show-icons
 bindsym $os+c        exec --no-startup-id rofi -show window -show-icons
 bindsym $os+$alt+c   exec --no-startup-id rofi -show emoji
+bindsym $os+p        exec --no-startup-id bwmenu -c 30 --auto-lock 86400
 
 # change focus
 bindsym $os+h focus left

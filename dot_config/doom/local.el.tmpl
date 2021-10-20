@@ -1,0 +1,19 @@
+;;; local.el -*- lexical-binding: t; -*-
+
+
+(setq private-font-spec
+      (font-spec
+       :family "{{ .emacs.font_family }}"
+       :size {{ .emacs.font_size }}
+       :weight 'normal
+       :width 'normal))
+
+
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+
+(setq org-directory "{{ .emacs.org_directory }}")
+
+(setq org-roam-directory "{{ .emacs.org_directory }}/roam")
+
+;; (setq rustic-cargo-bin "/c/Users/Arnaldur/.cargo/bin/cargo.exe")

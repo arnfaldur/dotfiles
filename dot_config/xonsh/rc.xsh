@@ -65,6 +65,8 @@ aliases['guimacs'] = "emacsclient -c"
 
 aliases['resource'] = "source ~/.config/xonsh/rc.xsh"
 
+aliases['chs'] = "cht.sh"
+
 def starti3():
     startx $XINITRC /usr/bin/i3
 
@@ -139,11 +141,11 @@ def inline_latex(args, stdin=None):
     return
 
 def entomb_workspaces():
-    for i in range(1,10):
+    for i in range(1,11):
         i3-resurrect save -d ~/.local/share/i3/resurrect -n -w @(i)
 
 def resurrect_workspaces():
-    for i in range(1,10):
+    for i in range(1,11):
         i3-resurrect restore -d ~/.local/share/i3/resurrect -n -w @(i)
 
 aliases['intex'] = inline_latex
@@ -151,78 +153,6 @@ aliases['intex'] = inline_latex
 def setup_keychain():
     keychain --absolute --dir "$XDG_RUNTIME_DIR/keychain" --eval id_ed25519 > /tmp/keychain.sh 2> /dev/null
     source-bash /tmp/keychain.sh
-
-def maybe_float(string):
-    try:
-        return float(string)
-    except ValueError:
-        return None
-
-def mystery():
-    return "asdf"
-
-def cur(args):
-    return 1
-    currencies = {'HKD', 'THB', 'ISK', 'MXN', 'AUD', 'RUB', 'TRY', 'ZAR',
-                  'NZD', 'BRL', 'CZK', 'JPY', 'GBP', 'CNY', 'USD', 'SEK',
-                  'RON', 'BGN', 'ILS', 'INR', 'DKK', 'CAD', 'CHF', 'PLN',
-                  'PHP', 'MYR', 'SGD', 'IDR', 'NOK', 'HUF', 'HRK', 'KRW'}
-    currencyA = ''
-    currencyB = ''
-    amount = 1
-
-    patterns = {
-        'cur': 'cur',
-        'cur': {'cur': 'num',
-                'to ': {'cur': None,
-                        'cur': 'num'}},
-        'num': {'cur': {'cur': None,
-                        'to ': 'cur'}},
-    }
-
-    string_that_might_be_a_number = mystery()
-    try:
-        float(string_that_might_be_a_number)
-        print("The string is a number but It's still cringe")
-    except ValueError:
-        print("The string isn't a number and It's pretty cringe")
-
-
-
-
-
-    def get_type(arg):
-        try:
-            float(element)
-            return 'num'
-        except ValueError:
-            if arg:
-                pass
-
-
-
-    url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
-    import shelve
-    from datetime import datetime, timedelta
-    update = False
-    with shelve.open("/tmp/currencies", "wr") as db:
-        if d := db.get('time'):
-            if datetime.strptime(d, "%Y-%m-%d") > datetime.now() - timedelta(2):
-                update = True
-        else:
-            update = True
-        if update:
-            try:
-                conte = urllib.request.urlopen(url).read()
-                eltre = xml.etree.ElementTree.fromstring(conte)
-                db['ECB'] = {c.attrib['currency']: c.attrib['rate'] for c in eltre[2][0]}
-                db['time'] = eltre[2][0].attrib
-            except e:
-                print(f"Error getting rates from the ECB: {e}")
-                return 1
-
-
-    return 0
 
 if p'/tmp/keychain.sh'.exists():
     source-bash /tmp/keychain.sh
