@@ -3,8 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(load! "local")
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Arnaldur"
@@ -46,7 +44,9 @@
 ;; available. You Can Either Set `Doom-Theme' Or Manually Load A Theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'sanityinc-tomorrow-bright)
-(setq doom-theme 'doom-tomorrow-night)
+;; (setq doom-theme 'doom-tomorrow-night)
+(setq doom-theme 'ujelly)
+;; (setq doom-dracula-brighter-comments t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -77,27 +77,30 @@
 (setq require-final-newline nil)
 (setq confirm-kill-emacs nil)
 
-(setq org-directory "{{ .emacs.org_directory }}")
-(setq org-roam-directory "{{ .emacs.org_directory }}/roam")
-
 (setq doom-localleader-key ",")
+(setq doom-localleader-alt-key "M-,")
+
 (map! :n "C-+" #'text-scale-increase
       :n "C--" #'text-scale-decrease
       :n "C-M-+" #'doom/increase-font-size
       :n "C-M--" #'doom/decrease-font-size
       :n "C-M-0" #'doom/reset-font-size
 
-      :n "U" 'evil-redo
-      :n "S" 'evil-snipe-s
-      :v "s" 'evil-surround-region
-      :nvm "H" 'evil-first-non-blank
-      :nvm "L" 'evil-end-of-line
+      :n "U" #'evil-redo
+      :n "S" #'evil-snipe-s
+      :v "s" #'evil-surround-region
+      :nvm "H" #'evil-first-non-blank
+      :nvm "L" #'evil-end-of-line
+
       (:after evil-easymotion
        :nm "s" evilem-map)
       (:when (featurep! :completion ivy)
        (:after ivy
         :map ivy-minibuffer-map
         "M-RET" #'ivy-immediate-done)))
+
+(define-key evil-motion-state-map "zJ" #'evil-scroll-line-to-top)
+(define-key evil-motion-state-map "zK" #'evil-scroll-line-to-bottom)
 
 ;; (map! :i "C-i" #'flyspell-auto-correct-word) WHAT!?
 (map! :map doom-leader-code-map
@@ -135,7 +138,18 @@
 (after! evil-snipe (evil-snipe-mode -1)
   (setq evil-snipe-scope 'visible))
 
+(after! company
+  (map!
+   "C-q" #'company-show-doc-buffer))
+
 ;; (global-activity-watch-mode)
+
+(setq org-directory "{{ .emacs.org_directory }}")
+(setq org-roam-directory "{{ .emacs.org_directory }}/roam")
+(setq org-agenda-files (list org-directory "~/vault/org/roam/daily"))
+
+(add-hook! org-mode
+ (flyspell-mode-off))
 
 (after! org-journal
   (setq ;; org-journal-file-header "#+TITLE: %Y-%m"
@@ -145,63 +159,41 @@
    org-extend-today-until 6
    org-journal-carryover-items nil))
 
-(use-package smerge-mode
-  :after hydra
-  :config
-  (defhydra unpackaged/smerge-hydra
-    (:color pink :hint nil :post (smerge-auto-leave))
-    "
-^Move^       ^Keep^               ^Diff^                 ^Other^
-^^-----------^^-------------------^^---------------------^^-------
-_n_ext       _b_ase               _<_: upper/base        _C_ombine
-_p_rev       _u_pper              _=_: upper/lower       _r_esolve
-^^           _l_ower              _>_: base/lower        _k_ill current
-^^           _a_ll                _R_efine
-^^           _RET_: current       _E_diff
-"
-    ("n" smerge-next)
-    ("p" smerge-prev)
-    ("b" smerge-keep-base)
-    ("u" smerge-keep-upper)
-    ("l" smerge-keep-lower)
-    ("a" smerge-keep-all)
-    ("RET" smerge-keep-current)
-    ("\C-m" smerge-keep-current)
-    ("<" smerge-diff-base-upper)
-    ("=" smerge-diff-upper-lower)
-    (">" smerge-diff-base-lower)
-    ("R" smerge-refine)
-    ("E" smerge-ediff)
-    ("C" smerge-combine-with-next)
-    ("r" smerge-resolve)
-    ("k" smerge-kill-current)
-    ("ZZ" (lambda ()
-            (interactive)
-            (save-buffer)
-            (bury-buffer))
-     "Save and bury buffer" :color blue)
-    ("q" nil "cancel" :color blue))
-  :hook (magit-diff-visit-file . (lambda ()
-                                   (when smerge-mode
-                                     (unpackaged/smerge-hydra/body)))))
+(after! calendar
+  ;; Bind this to i in the calendar map
+  (defun my/org-roam-capture-calendar (arg &optional event)
+    (interactive
+     (list current-prefix-arg last-nonmenu-event))
+    (org-roam-dailies--capture
+     (time-add 86400
+               (org-journal--calendar-date->time
+                (calendar-cursor-to-date t event)))
+     ;; (calendar-cursor-to-date t event)
+     arg)))
 
+(after! ispell
+  (setq
+   ispell-dictionary "en_US"))
 
-(defun latex/build ()
-  (interactive)
-  (progn
-    (let ((TeX-save-query nil))
-      (TeX-save-document (TeX-master-file)))
-    (TeX-command "LatexMk" 'TeX-master-file -1)))
+(load! "modes/smerge")
 
 (after! latex
+  (setq TeX-clean-confirm nil)
+  (setq TeX-command-extra-options "-aux-directory=/tmp/latexmk")
+
+  (defun latex/build ()
+    (interactive)
+    (progn
+      (TeX-save-document (TeX-master-file))
+      (TeX-command-sequence '("LatexMk"))))
   (map!
    :after latex
    :map LaTeX-mode-map
    :localleader
-   :desc "Build" "b" 'latex/build
-   :desc "View" "v" 'TeX-view
-   :desc "Make environment" "e" 'cdlatex-environment))
-
+   :desc "Build"              "b" #'latex/build
+   :desc "View"               "v" #'TeX-view
+   :desc "Make environment"   "e" #'cdlatex-environment
+   :desc "Clean"              "c" #'TeX-clean))
 
 ;; (map!
 ;;  :map TeX-fold-mode-map
@@ -219,8 +211,36 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
           "--completion-style=detailed"
           "--header-insertion=never")))
 
+(after! ein-notebook
+  (map!
+   :after ein-notebook
+   :map ein:notebook-mode-map
+   :ni       "M-j"      #'ein:worksheet-goto-next-input-km
+   :ni       "M-k"      #'ein:worksheet-goto-prev-input-km
+   :ni       "M-J"    #'ein:worksheet-move-cell-down-km
+   :ni       "M-K"    #'ein:worksheet-move-cell-up-km
+   :ni       [S-return] #'ein:worksheet-execute-cell-and-goto-next-km
+   :ni       [C-return] #'ein:worksheet-execute-cell-km
+   :localleader
+   :desc "Save notebook"       "s"     #'ein:notebook-save-notebook-command-km
+   (:prefix ("c" . "Cell")
+    :desc "Insert cell above"        "a"     #'ein:worksheet-insert-cell-above-km
+    :desc "Insert cell below"        "b"     #'ein:worksheet-insert-cell-below-km
+    :desc "Delete cell"         "d"     #'ein:worksheet-delete-cell
+    :desc "Clear cell output"        "l"     #'ein:worksheet-clear-output-km
+    :desc "Paste cell"               "p"     #'ein:worksheet-yank-cell-km
+    :desc "Copy cell"                "y"     #'ein:worksheet-copy-cell-km
+    :desc "Kill cell"                "k"     #'ein:worksheet-kill-cell-km)))
+
+
 ;; (after! bison
 ;;   (setq bison-decl-token-column 4)
 ;;   (setq bison-decl-type-column 4)
 ;;   (setq bison-rule-enumeration-column 4)
 ;;   (setq bison-rule-separator-column 4))
+
+(after! plantuml-mode
+  (map!
+   :map plantuml-mode-map
+   :localleader
+   :desc "Preview"      "b" #'plantuml-preview))
