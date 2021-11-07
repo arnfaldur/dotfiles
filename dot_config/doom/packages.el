@@ -16,6 +16,10 @@
 (package! xonsh-mode)
 (package! keychain-environment)
 
+;; (unpin! org-roam)
+(package! websocket)
+(package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
+
 (package! color-theme-sanityinc-tomorrow)
 (package! ujelly-theme)
 

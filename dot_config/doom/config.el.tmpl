@@ -195,6 +195,20 @@
    :desc "Make environment"   "e" #'cdlatex-environment
    :desc "Clean"              "c" #'TeX-clean))
 
+(after! web-mode
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq typescript-indent-level 2)
+  (setq web-mode-comment-formats
+          '(("java"       . "//")
+            ("javascript" . "//")
+            ;; ("jsx" . "//")
+            ("typescript" . "//")
+            ("tsx" . "//")
+            ("php"        . "//")
+            ("css"        . "//"))))
+
 ;; (map!
 ;;  :map TeX-fold-mode-map
 ;;  :localleader
