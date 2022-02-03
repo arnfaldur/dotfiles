@@ -63,12 +63,13 @@ bindsym $os+Shift+Control+l move workspace to output right
 
 # adjust default workspace splitting orientation
 default_orientation auto
+workspace_layout tabbed
 
 # split in horizontal orientation
 bindsym $os+b split h
 
 # split in vertical orientation
-bindsym $os+v split v
+# bindsym $os+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $os+f fullscreen toggle
@@ -101,6 +102,7 @@ set $ws7  7
 set $ws8  8
 set $ws9  9
 set $ws10 10
+set $ws-org Org
 
 
 # switch to workspace
@@ -115,6 +117,8 @@ bindsym $os+8 workspace $ws8
 bindsym $os+9 workspace $ws9
 bindsym $os+0 workspace $ws10
 
+bindsym $os+o workspace $ws-org
+
 # move focused container to workspace
 bindsym $os+Shift+1 move container to workspace $ws1
 bindsym $os+Shift+2 move container to workspace $ws2
@@ -126,6 +130,7 @@ bindsym $os+Shift+7 move container to workspace $ws7
 bindsym $os+Shift+8 move container to workspace $ws8
 bindsym $os+Shift+9 move container to workspace $ws9
 bindsym $os+Shift+0 move container to workspace $ws10
+bindsym $os+Shift+o move container to workspace $ws-org
 
 # reload the configuration file
 bindsym $os+Shift+c reload
@@ -156,53 +161,22 @@ mode "reboot" {
   bindsym Escape mode "default"
 }
 
+mode "suspend" {
+  bindsym u exec "systemctl suspend", mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
 mode "system" {
   bindsym h mode hibernate
   bindsym r mode reboot
+  bindsym s mode suspend
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
 
 bindsym $os+x mode system
 
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window's width.
-        # Pressing right will grow the window's width.
-        # Pressing up will shrink the window's height.
-        # Pressing down will grow the window's height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # smaller increments
-        bindsym Shift+h resize shrink width 2 px or 2 ppt
-        bindsym Shift+j resize grow height 2 px or 2 ppt
-        bindsym Shift+k resize shrink height 2 px or 2 ppt
-        bindsym Shift+l resize grow width 2 px or 2 ppt
-
-        # smaller increments
-        bindsym Shift+Left resize shrink width 2 px or 2 ppt
-        bindsym Shift+Down resize grow height 2 px or 2 ppt
-        bindsym Shift+Up resize shrink height 2 px or 2 ppt
-        bindsym Shift+Right resize grow width 2 px or 2 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $os+r mode "resize"
 
 bindsym $os+$alt+h resize shrink width 2 px or 2 ppt
 bindsym $os+$alt+j resize grow height 2 px or 2 ppt
@@ -222,34 +196,18 @@ bindsym $os+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $os+u          exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 bindsym $os+apostrophe exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  mode hide
-  position bottom
-  #status_command i3status
-  status_command i3blocks
-
-  colors {
-    separator #ff0000
-    background #000000
-    statusline #ffffff
-    focused_workspace #880000 #aa0000 #ffffff
-    active_workspace #220000 #770000 #ffffff
-    inactive_workspace #000000 #440000 #bbbbbb
-    urgent_workspace #ff0000 #440000 #cccccc
-  }
-}
+bindsym $os+y move scratchpad
+bindsym $os+Shift+y scratchpad show
 
 # start dmenu (a program launcher)
 # bindsym $os+d exec dmenu_run # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that # installed.
 bindsym $os+d        exec --no-startup-id rofi -show drun -show-icons
 bindsym $os+Shift+d  exec --no-startup-id rofi -show run -show-icons
-bindsym $os+c        exec --no-startup-id rofi -show window -show-icons
+bindsym $os+Shift+w  exec --no-startup-id rofi -show window -show-icons
 
-bindsym $os+$alt+c   exec --no-startup-id rofi -show emoji
-bindsym $os+$alt+v   exec --no-startup-id roficlip
+bindsym $os+c  exec --no-startup-id rofimoji
+bindsym $os+v  exec --no-startup-id roficlip
 
 bindsym $os+Shift+z  exec --no-startup-id rofi -show emoji
 bindsym $os+Shift+a  exec --no-startup-id roficlip
@@ -260,6 +218,12 @@ bindsym $os+p        exec --no-startup-id bwmenu -c 30 --auto-lock 86400
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+# Disable scrolling on tabs
+#bindsym button1 nop
+bindsym button4 nop
+bindsym button5 nop
+bindsym $os+button9 --whole-window floating toggle
 
 #User configuration
 
@@ -275,7 +239,6 @@ exec --no-startup-id clipster -d
 #bindsym Mod4+space setxkbmap us
 
 mouse_warping none
-workspace_auto_back_and_forth yes
 
 # Workspace assignments
 
@@ -294,14 +257,32 @@ hide_edge_borders both
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #cc0000 #880000 #ffffff #008888   #cc0000
-client.focused_inactive #333333 #333333 #ffffff #006666   #660000
-client.unfocused        #333333 #221111 #888888 #004444   #330000
-client.urgent           #bbbbbb #909000 #ffffff #909000   #ff0000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.urgent           #CE4045 #CE4045 #FFFFFF #DCCD69
+client.focused          #9FCA56 #9FCA56 #000000 #FFBE0A
+client.focused_inactive #4F99D3 #4F99D3 #000000 #A074C4
+client.unfocused        #1f2326 #1f2326 #AAAAAA #A074C4
+client.placeholder      #6A4C93 #6A4C93 #ffffff #ffffff #6A4C93
 
 client.background       #ffffff
 
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  mode hide
+  position bottom
+  #status_command i3status
+  status_command i3blocks
+
+  colors {
+    separator #AAAAAA
+    background #000000
+    statusline #FFFFFF
+    urgent_workspace #CE4045 #CE4045 #FFFFFF #FFFFFF
+    focused_workspace #9FCA56 #9FCA56 #151718 #FFFFFF
+    active_workspace  #4F99D3 #4F99D3 #000000 #A074C4
+    inactive_workspace #000000 #000000 #AAAAAA #AAAAAA
+  }
+}
 
 # Misc
 
@@ -309,6 +290,7 @@ for_window [class=".*Qt.*"] floating enable
 for_window [class=".*Skil.*"] floating enable
 for_window [title=".*ImageView.*"] floating enable
 for_window [title="Processing.jl"] floating enable
+for_window [title="AutoWar"] floating enable
 
 bindsym $os+F2 exec xbacklight -inc 5           && pkill -SIGRTMIN+10 i3blocks
 bindsym $os+F1 exec xbacklight -dec 5           && pkill -SIGRTMIN+10 i3blocks

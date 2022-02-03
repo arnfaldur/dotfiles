@@ -76,9 +76,14 @@
 (setq global-undo-tree-mode t)
 (setq require-final-newline nil)
 (setq confirm-kill-emacs nil)
+(run-at-time nil 600 'recentf-save-list)
 
 (setq doom-localleader-key ",")
 (setq doom-localleader-alt-key "M-,")
+
+(after! evil-local-mode
+  (add-hook ’evil-local-mode-hook ’turn-on-undo-tree-mode)
+  (turn-on-undo-tree-mode))
 
 (map! :n "C-+" #'text-scale-increase
       :n "C--" #'text-scale-decrease
@@ -107,6 +112,9 @@
       "c" #'recompile
       "C" #'compile)
 
+(map! :map evil-window-map
+      "q" #'quit-window)
+
 (map! :leader
       :desc "M-x"                   "SPC"    #'execute-extended-command
       :desc "Visualize undo tree"   "u"      #'undo-tree-visualize
@@ -134,6 +142,11 @@
         :desc "Capture yesterday"         "Y" #'org-roam-dailies-capture-yesterday
         :desc "Find directory"            "-" #'org-roam-dailies-find-directory)))
 
+(after! better-jumper
+  (map! "<mouse-9>" #'better-jumper-jump-forward
+        "<mouse-8>" #'better-jumper-jump-backward))
+
+
 
 (after! evil-snipe (evil-snipe-mode -1)
   (setq evil-snipe-scope 'visible))
@@ -142,14 +155,23 @@
   (map!
    "C-q" #'company-show-doc-buffer))
 
+(after! locate
+  (setq locate-command "plocate"))
+
 ;; (global-activity-watch-mode)
 
 (setq org-directory "{{ .emacs.org_directory }}")
 (setq org-roam-directory "{{ .emacs.org_directory }}/roam")
 (setq org-agenda-files (list org-directory "~/vault/org/roam/daily"))
 
-(add-hook! org-mode
- (flyspell-mode-off))
+(remove-hook! '(org-mode-hook
+                   markdown-mode-hook
+                   TeX-mode-hook
+                   rst-mode-hook
+                   mu4e-compose-mode-hook
+                   message-mode-hook
+                   git-commit-mode-hook)
+        #'flyspell-mode)
 
 (after! org-journal
   (setq ;; org-journal-file-header "#+TITLE: %Y-%m"
@@ -158,6 +180,21 @@
    org-journal-dir (concat org-directory "/journal/")
    org-extend-today-until 6
    org-journal-carryover-items nil))
+
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :after org-roam ;; or :after org
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+;;  :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
 
 (after! calendar
   ;; Bind this to i in the calendar map
@@ -195,6 +232,8 @@
    :desc "Make environment"   "e" #'cdlatex-environment
    :desc "Clean"              "c" #'TeX-clean))
 
+;; Programming Languages
+
 (after! web-mode
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-markup-indent-offset 2)
@@ -205,9 +244,14 @@
             ("javascript" . "//")
             ;; ("jsx" . "//")
             ("typescript" . "//")
-            ("tsx" . "//")
+            ;; ("tsx" . "//")
             ("php"        . "//")
             ("css"        . "//"))))
+
+(after! rustic
+  (add-hook #'rustic-mode-hook (lambda () (setq-local buffer-save-without-query t)))
+  (setq rustic-compile-backtrace "1"))
+
 
 ;; (map!
 ;;  :map TeX-fold-mode-map
@@ -224,6 +268,14 @@
           "--clang-tidy"
           "--completion-style=detailed"
           "--header-insertion=never")))
+
+;; Python
+
+;; (after! python-mode
+;;   (setq standard-indent 4))
+
+(after! lsp-pyright
+  (setq lsp-pyright-multi-root nil))
 
 (after! ein-notebook
   (map!
@@ -245,6 +297,23 @@
     :desc "Paste cell"               "p"     #'ein:worksheet-yank-cell-km
     :desc "Copy cell"                "y"     #'ein:worksheet-copy-cell-km
     :desc "Kill cell"                "k"     #'ein:worksheet-kill-cell-km)))
+
+;; Lisps
+
+;; Racket
+
+(after! racket-mode
+  (remove-hook 'racket-mode-hook #'lispy-mode)
+  (setq-hook! 'racket-mode-hook +format-with-lsp nil)
+  (setq +format-with-lsp nil)
+  (setq smartparens-mode nil)
+  (setq evil-shift-width 2)
+  (setq standard-indent 2)
+  ;; (setq +format-on-save-enabled-modes '(not emacs-lisp-mode sql-mode tex-mode latex-mode org-msg-edit-mode racket-mode))
+
+  (map!
+   :localleader
+   :desc "describe"   "d" #'racket-xp-describe))
 
 
 ;; (after! bison

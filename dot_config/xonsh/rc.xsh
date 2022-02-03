@@ -2,7 +2,7 @@ xontrib load argcomplete kitty prompt_starship vox
 #xontrib load z
 xontrib load coreutils
 xontrib load readable-traceback
-xontrib load schedule
+#xontrib load schedule
 xontrib load zoxide
 xontrib load fzf-widgets
 
@@ -23,6 +23,13 @@ aliases['l'] = "ls -a --color=auto"
 aliases['ll'] = "ls -lh --color=auto"
 aliases['la'] = "ls -lah --color=auto"
 aliases['ls'] = "ls --color=auto"
+
+aliases['el'] = "exa --long"
+aliases['ea'] = "exa --long --all"
+for i in range(9):
+    aliases[f'et{i}'] = f"exa --long --tree --level={i}"
+    aliases[f'ea{i}'] = f"exa --long --all --tree --level={i}"
+
 
 aliases['reload'] = "source ~/.config/zsh/.zshrc"
 
@@ -75,7 +82,9 @@ def pacsizes():
 def pacremoveorphans():
     sudo pacman -Rns @$(pacman -Qtdq)
 
-
+def setmousespeed(speed):
+    mouse_name = "Logitech G700s Rechargeable Gaming Mouse"
+    xinput --set-prop @(mouse_name) 'Coordinate Transformation Matrix' @(speed) 0 0 0 @(speed) 0 0 0 1
 def resetrepeatrate():
     xset r rate 256 32
 def setkeymap():
