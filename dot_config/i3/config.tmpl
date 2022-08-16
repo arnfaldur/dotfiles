@@ -146,9 +146,6 @@ bindsym $os+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut
 #bindsym $os+Shift+e exec i3-msg exit
 
 bindsym $os+n exec pkill -USR1 redshift
-
-bindsym $os+g exec zsh ~/.config/i3/lock
-
 mode "hibernate" {
   bindsym i exec "systemctl hibernate", mode "default"
   bindsym Return mode "default"
@@ -168,6 +165,8 @@ mode "suspend" {
 }
 
 mode "system" {
+  bindsym l exec zsh ~/.config/i3/lock, mode "default"
+
   bindsym h mode hibernate
   bindsym r mode reboot
   bindsym s mode suspend
@@ -206,7 +205,7 @@ bindsym $os+d        exec --no-startup-id rofi -show drun -show-icons
 bindsym $os+Shift+d  exec --no-startup-id rofi -show run -show-icons
 bindsym $os+Shift+w  exec --no-startup-id rofi -show window -show-icons
 
-bindsym $os+c  exec --no-startup-id rofimoji
+bindsym $os+c  exec --no-startup-id "rofimoji -a copy --typer xdotool"
 bindsym $os+v  exec --no-startup-id roficlip
 
 bindsym $os+Shift+z  exec --no-startup-id rofi -show emoji

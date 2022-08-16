@@ -1,8 +1,7 @@
-xontrib load argcomplete kitty prompt_starship vox
+xontrib load argcomplete kitty prompt_starship vox autovox
 #xontrib load z
 xontrib load coreutils
-xontrib load readable-traceback
-#xontrib load schedule
+#xontrib load readable-traceback
 xontrib load zoxide
 xontrib load fzf-widgets
 
@@ -14,7 +13,7 @@ xontrib load fzf-widgets
 
 from math import sqrt, log
 
-#$XONSH_DEBUG = 1
+$XONSH_DEBUG = 0
 #
 source ~/.config/xonsh/env.xsh
 
@@ -100,19 +99,24 @@ def planck():
 def preonic():
     setplanckkeymap(); resetrepeatrate()
 
-def disabletrackpad():
-    xinput disable $(xinput list | grep -i 'Elan Touchpad' | awk '{print substr($5, 4)}')
-def enabletrackpad():
-    xinput enable $(xinput list | grep -i 'Elan Touchpad' | awk '{print substr($5, 4)}')
-def disablekeyboard():
-    xinput disable $(xinput list | grep -i 'AT Translated Set 2 keyboard' | awk '{print substr($7, 4)}')
-    xinput disable $(xinput list | grep -i 'Asus WMI hotkeys' | awk '{print substr($5, 4)}')
-    xinput disable $(xinput list | grep -i 'Power Button' | awk '{print substr($4, 4)}')
+def _disable_device_by_name(name):
+    xinput disable @($(xinput list | grep -i @(name) | awk '{print substr($0, match($0, "id=") + 3, 2)}').strip())
+def _enable_device_by_name(name):
+    xinput enable @($(xinput list | grep -i @(name) | awk '{print substr($0, match($0, "id=") + 3, 2)}').strip())
 
+def disabletrackpad():
+    _disable_device_by_name("Elan Touchpad")
+def enabletrackpad():
+    _enable_device_by_name("Elan Touchpad")
+
+def disablekeyboard():
+    _disable_device_by_name('AT Translated Set 2 keyboard')
+    _disable_device_by_name('Asus WMI hotkeys')
+    _disable_device_by_name('Power Button')
 def enablekeyboard():
-    xinput enable $(xinput list | grep -i 'AT Translated Set 2 keyboard' | awk '{print substr($7, 4)}')
-    xinput enable $(xinput list | grep -i 'Asus WMI hotkeys' | awk '{print substr($5, 4)}')
-    xinput enable $(xinput list | grep -i 'Power Button' | awk '{print substr($4, 4)}')
+    _enable_device_by_name('AT Translated Set 2 keyboard')
+    _enable_device_by_name('Asus WMI hotkeys')
+    _enable_device_by_name('Power Button')
 
 def portablemode():
     enabletrackpad()
@@ -158,11 +162,17 @@ def resurrect_workspaces():
 aliases['intex'] = inline_latex
 
 def setup_keychain():
-    keychain --absolute --dir "$XDG_RUNTIME_DIR/keychain" --eval id_ed25519 > /tmp/keychain.sh 2> /dev/null
+    keychain -q --absolute --dir "$XDG_RUNTIME_DIR/keychain" --eval id_ed25519 > /tmp/keychain.sh
     source-bash /tmp/keychain.sh
 
 if p'/tmp/keychain.sh'.exists():
     source-bash /tmp/keychain.sh
+
+@events.autovox_policy
+def venv_policy(path, **_):
+    venv = path / "venv"
+    if venv.exists():
+        return venv
 
 $LS_COLORS.update({
     'bd': ('BACKGROUND_BLACK', 'BOLD_YELLOW'),

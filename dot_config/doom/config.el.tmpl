@@ -142,6 +142,30 @@
         :desc "Capture yesterday"         "Y" #'org-roam-dailies-capture-yesterday
         :desc "Find directory"            "-" #'org-roam-dailies-find-directory)))
 
+
+(defun keychain-set-environment ()
+  "Set ssh-agent and gpg-agent environment variables.
+
+Set the environment variables `SSH_AUTH_SOCK', `SSH_AGENT_PID'
+and `GPG_AGENT' in Emacs' `process-environment' according to
+information retrieved from files created by the keychain script."
+  (interactive)
+  (let* ((ssh (shell-command-to-string "keychain -q --noask --absolute --dir \"$XDG_RUNTIME_DIR/keychain\" --eval id_ed25519"))
+         (gpg (shell-command-to-string "keychain -q --noask --absolute --dir \"$XDG_RUNTIME_DIR/keychain\" --agents gpg --eval")))
+    (list (and ssh
+               (string-match "SSH_AUTH_SOCK[=\s]\\([^\s;\n]*\\)" ssh)
+               (setenv       "SSH_AUTH_SOCK" (match-string 1 ssh)))
+          (and ssh
+               (string-match "SSH_AGENT_PID[=\s]\\([0-9]*\\)?" ssh)
+               (setenv       "SSH_AGENT_PID" (match-string 1 ssh)))
+          (and gpg
+               (string-match "GPG_AGENT_INFO[=\s]\\([^\s;\n]*\\)" gpg)
+               (setenv       "GPG_AGENT_INFO" (match-string 1 gpg))))))
+
+(keychain-set-environment)
+
+(setq shell-file-name "/usr/bin/dash")
+
 (after! better-jumper
   (map! "<mouse-9>" #'better-jumper-jump-forward
         "<mouse-8>" #'better-jumper-jump-backward))
@@ -247,6 +271,13 @@
             ;; ("tsx" . "//")
             ("php"        . "//")
             ("css"        . "//"))))
+
+(after! typescript-mode
+  (setq typescript-indent-level 2))
+
+
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+(add-hook 'vue-mode-hook #'lsp!)
 
 (after! rustic
   (add-hook #'rustic-mode-hook (lambda () (setq-local buffer-save-without-query t)))

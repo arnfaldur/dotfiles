@@ -16,10 +16,13 @@
 (package! xonsh-mode)
 (package! keychain-environment)
 
+(package! vue-mode)
+
 ;; (unpin! org-roam)
 (package! websocket)
 (package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
 
+;; Themes
 (package! color-theme-sanityinc-tomorrow)
 (package! ujelly-theme)
 

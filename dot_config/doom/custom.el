@@ -19,9 +19,12 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#0d1011" "#fabd2f"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#0d1011" "#b8bb26"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#0d1011" "#928374"))
+ '(js-indent-level 2)
  '(midnight-mode t)
  '(objed-cursor-color "#fb4934")
  '(pdf-view-midnight-colors (cons "#ebdbb2" "#282828"))
+ '(python-shell-interpreter "ipython")
+ '(python-shell-interpreter-args "--simple-prompt")
  '(require-final-newline nil)
  '(rustic-ansi-faces
    ["#282828" "#fb4934" "#b8bb26" "#fabd2f" "#83a598" "#cc241d" "#8ec07c" "#ebdbb2"])
