@@ -43,12 +43,11 @@ signal=10
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=♪
+label=🔊
 instance=Master
 #instance=PCM
 interval=once
 signal=10
-
 
 # CPU usage
 #
@@ -61,14 +60,16 @@ min_width=CPU:00.0%
 align=center
 
 [load_average]
-label=🏋
+label=🤹
 interval=10
 
+# Temperature
 
-[temp]
-command=echo "$(sensors coretemp-isa-0000 | awk '/Package/ {print substr(substr($4,2), 1,2);}')°C"
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
 interval=10
-#color=#b58900
 
 # Memory usage
 #
@@ -111,6 +112,7 @@ label=🖧
 #instance=eth0
 interval=5
 
+{{- if eq .chezmoi.hostname "Julius" }}
 # Battery indicator
 #
 # The battery instance defaults to 0.
@@ -119,9 +121,8 @@ interval=5
 
 #command = ~/.config/i3/battery
 interval=3
-
+{{- end }}
 # Date Time
-#
 
 [time]
 label=🇩🇰
@@ -132,6 +133,7 @@ interval=1
 label=🇮🇸
 command=LC_TIME='is_IS.UTF-8' TZ='Atlantic/Reykjavik' date '+%X'
 interval=1
+
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
@@ -146,15 +148,6 @@ interval=1
 # Support multiple VPN, with colors.
 #[openvpn]
 #interval=20
-
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
 
 # Key indicators
 #
