@@ -27,8 +27,7 @@
 command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=32
 markup=none
-
-{{- if eq .chezmoi.hostname "Julius" -}}
+{{ if eq .chezmoi.hostname "Julius" -}}
 # Display brightness
 [brightness]
 label=🖵
