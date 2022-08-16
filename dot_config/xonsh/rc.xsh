@@ -47,6 +47,8 @@ aliases['yarn'] = 'yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 aliases['copy'] = 'xclip -selection clipboard'
 aliases['pulserestart'] = 'pulseaudio --kill && sleep 1 && pulseaudio --start'
 
+# misc
+
 $TEXMFDIST = p"/usr/share/texmf-dist"
 $TEXMFHOME = p"$XDG_DATA_HOME/texmf"
 aliases['tlmgr'] = '/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
@@ -70,6 +72,15 @@ aliases['guimacs'] = "emacsclient -c"
 aliases['resource'] = "source ~/.config/xonsh/rc.xsh"
 
 aliases['chs'] = "cht.sh"
+
+aliases['unts'] = "units -t"
+from xonsh.tools import uncapturable, unthreadable
+@uncapturable
+@unthreadable
+def _dif(args):
+    return ($(diff -u @(args) | diff-so-fancy), None)
+#aliases['dif'] = "diff -u @($args) | diff-so-fancy"
+aliases['dif'] = _dif
 
 def starti3():
     startx $XINITRC /usr/bin/i3

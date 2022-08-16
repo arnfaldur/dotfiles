@@ -164,12 +164,19 @@ mode "suspend" {
   bindsym Escape mode "default"
 }
 
+mode "windos" {
+  bindsym i exec "sudo reboot-to-windows", mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
 mode "system" {
   bindsym l exec zsh ~/.config/i3/lock, mode "default"
 
   bindsym h mode hibernate
   bindsym r mode reboot
   bindsym s mode suspend
+  bindsym w mode windos
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
