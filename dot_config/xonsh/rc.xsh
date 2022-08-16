@@ -62,7 +62,7 @@ aliases['gg'] = 'git pull'
 aliases['gf'] = 'git fetch'
 
 $RANGER_LASTDIR = p"$XDG_STATE_HOME/ranger/lastdir"
-aliases['ranger'] = '/usr/bin/ranger --choosedir=$RANGER_LASTDIR && cd $(cat $RANGER_LASTDIR)'
+#aliases['ranger'] = '/usr/bin/ranger --choosedir=$RANGER_LASTDIR && cd $(cat $RANGER_LASTDIR)'
 
 
 aliases['em'] = "emacsclient -t"
