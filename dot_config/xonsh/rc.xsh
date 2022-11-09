@@ -73,7 +73,9 @@ aliases['resource'] = "source ~/.config/xonsh/rc.xsh"
 
 aliases['chs'] = "cht.sh"
 
-aliases['unts'] = "units -t"
+aliases['units'] = 'units --history "$XDG_CACHE_HOME/units_history"'
+aliases['unts'] = 'units -t'
+
 from xonsh.tools import uncapturable, unthreadable
 @uncapturable
 @unthreadable
