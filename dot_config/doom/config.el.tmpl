@@ -72,6 +72,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq frame-title-format '("%f [%b] - Doom Emacs"))
+
 (setq gc-cons-threshold 20000000)
 (setq global-undo-tree-mode t)
 (setq require-final-newline nil)
@@ -182,7 +184,7 @@ information retrieved from files created by the keychain script."
 (after! locate
   (setq locate-command "plocate"))
 
-;; (global-activity-watch-mode)
+(global-activity-watch-mode)
 
 (setq org-directory "{{ .emacs.org_directory }}")
 (setq org-roam-directory "{{ .emacs.org_directory }}/roam")

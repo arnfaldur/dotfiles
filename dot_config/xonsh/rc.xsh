@@ -9,7 +9,7 @@ xontrib load fzf-widgets
 # source-zsh "echo loading xonsh foreign shell"
 
 #$VI_MODE = True
-#XONSH_SHOW_TRACEBACK = True
+$XONSH_SHOW_TRACEBACK = False
 
 from math import sqrt, log
 
@@ -30,7 +30,13 @@ for i in range(9):
     aliases[f'ea{i}'] = f"exa --long --all --tree --level={i}"
 
 
-aliases['reload'] = "source ~/.config/zsh/.zshrc"
+#aliases['reload'] = "source ~/.config/zsh/.zshrc"
+
+aliases['orgsave'] = "git commit -am @$(date -Iseconds)"
+
+aliases['pa'] = "@($args) --color=always | bat -p"
+
+aliases['paparu'] = "paru @($args) --color=always | bat -p"
 
 # pacman utils
 
@@ -41,7 +47,7 @@ aliases['reloadwifi'] = "systemctl restart netctl-auto@wlp3s0.service"
 aliases['wifi'] = "sudo wifi-menu"
 aliases['open'] = "xdg-open"
 aliases['firefox'] = "firefox-developer-edition"
-aliases['dragon'] = "dragon-drag-and-drop"
+aliases['dragon'] = "dragon-drop"
 aliases['vim'] = "nvim"
 aliases['yarn'] = 'yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 aliases['copy'] = 'xclip -selection clipboard'
@@ -55,10 +61,10 @@ aliases['tlmgr'] = '/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 aliases['ssh'] = 'kitty +kitten ssh'
 
-aliases['gs'] = 'git status'
+aliases['gs'] = 'git status -sb'
 aliases['gc'] = 'git commit'
-aliases['gp'] = 'git push'
-aliases['gg'] = 'git pull'
+aliases['gps'] = 'git push'
+aliases['gpl'] = 'git pull'
 aliases['gf'] = 'git fetch'
 
 $RANGER_LASTDIR = p"$XDG_STATE_HOME/ranger/lastdir"

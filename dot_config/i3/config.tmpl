@@ -238,12 +238,15 @@ bindsym $os+button9 --whole-window floating toggle
 # Startup applications
 exec dunst
 exec systembus-notify
+exec hsetroot -solid "#000000"
+#exec picom
 exec xbanish
 {{- if eq .chezmoi.hostname "Belgur" }}
 exec redshift
 {{- end }}
 exec emacs --daemon
 exec --no-startup-id clipster -d
+exec aw-qt
 
 # Keyboard map switcher
 #bindsym Mod4+space setxkbmap us

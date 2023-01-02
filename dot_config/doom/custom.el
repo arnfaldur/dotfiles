@@ -22,6 +22,7 @@
  '(js-indent-level 2)
  '(midnight-mode t)
  '(objed-cursor-color "#fb4934")
+ '(org-log-done 'time)
  '(pdf-view-midnight-colors (cons "#ebdbb2" "#282828"))
  '(python-shell-interpreter "ipython")
  '(python-shell-interpreter-args "--simple-prompt")
