@@ -9,7 +9,7 @@ FILE="$DIR/file"
 DATE=$(date +"%y-%m-%d-%H-%M-%S")
 RESOLUTION=$(xdpyinfo | grep 'dimensions:' | awk '{print substr($2, 1)}')
 
-ffmpeg -y -loglevel 0 -t 1 -s $RESOLUTION -f x11grab -i :0 $FILE.bmp ||
+ffmpeg -y -loglevel 0 -t 1 -s $RESOLUTION -f x11grab -i $DISPLAY $FILE.bmp ||
     cd ~/.config/i3/ &&
 ./screenshotmangler $FILE.bmp $FILE.bmp &&
 #import -window root ${EFFECT[@]} ~/.config/i3/lock.jpg &&

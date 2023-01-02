@@ -24,6 +24,7 @@
  '(objed-cursor-color "#fb4934")
  '(org-log-done 'time)
  '(pdf-view-midnight-colors (cons "#ebdbb2" "#282828"))
+ '(python-pytest-executable "venv/bin/pytest")
  '(python-shell-interpreter "ipython")
  '(python-shell-interpreter-args "--simple-prompt")
  '(require-final-newline nil)
