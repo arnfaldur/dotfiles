@@ -182,6 +182,13 @@ information retrieved from files created by the keychain script."
 (after! locate
   (setq locate-command "plocate"))
 
+(setq +format-on-save-enabled-modes
+      '(not emacs-lisp-mode             ; elisp's mechanisms are good enough
+            sql-mode                    ; sqlformat is currently broken
+            tex-mode                    ; latexindent is broken
+            latex-mode
+            web-mode))
+
 ;; (global-activity-watch-mode)
 
 (setq org-directory "{{ .emacs.org_directory }}")

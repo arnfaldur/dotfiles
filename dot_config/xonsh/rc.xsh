@@ -17,6 +17,9 @@ $XONSH_DEBUG = 0
 #
 source ~/.config/xonsh/env.xsh
 
+# workaround https://github.com/xonsh/xonsh/issues/4409
+__import__('warnings').filterwarnings('ignore', 'There is no current event loop', DeprecationWarning, 'prompt_toolkit.eventloop.utils')
+
 # aliases
 aliases['l'] = "ls -a --color=auto"
 aliases['ll'] = "ls -lh --color=auto"
