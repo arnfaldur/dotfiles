@@ -17,6 +17,7 @@
 (package! keychain-environment)
 
 (package! vue-mode)
+(package! magit-gitflow)
 
 ;; (unpin! org-roam)
 (package! websocket)

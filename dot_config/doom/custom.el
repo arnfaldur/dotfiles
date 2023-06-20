@@ -20,6 +20,9 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#0d1011" "#b8bb26"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#0d1011" "#928374"))
  '(js-indent-level 2)
+ '(lsp-file-watch-threshold nil)
+ '(magit-gitflow-hotfix-finish-arguments '("--notag"))
+ '(magit-gitflow-release-finish-arguments '("--notag"))
  '(midnight-mode t)
  '(objed-cursor-color "#fb4934")
  '(org-log-done 'time)
@@ -62,3 +65,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 

@@ -1,4 +1,5 @@
-xontrib load argcomplete kitty prompt_starship vox autovox
+xontrib load argcomplete kitty vox autovox
+xontrib load prompt_starship
 #xontrib load z
 xontrib load coreutils
 #xontrib load readable-traceback
@@ -189,6 +190,8 @@ def setup_keychain():
 
 if p'/tmp/keychain.sh'.exists():
     source-bash /tmp/keychain.sh
+
+execx($(rtx activate xonsh))
 
 @events.autovox_policy
 def venv_policy(path, **_):

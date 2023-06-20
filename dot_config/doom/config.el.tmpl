@@ -229,6 +229,17 @@ information retrieved from files created by the keychain script."
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
+
+
+(use-package! magit-gitflow
+  :hook (magit-mode . turn-on-magit-gitflow))
+
+(after! magit-gitflow
+ (evil-define-key* '(normal visual) magit-mode-map
+   "%" #'magit-gitflow-popup)
+ (transient-append-suffix 'magit-dispatch 'magit-worktree
+   '("%" "Gitflow" magit-gitflow-popup)))
+
 (after! calendar
   ;; Bind this to i in the calendar map
   (defun my/org-roam-capture-calendar (arg &optional event)
@@ -284,9 +295,32 @@ information retrieved from files created by the keychain script."
 (after! typescript-mode
   (setq typescript-indent-level 2))
 
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
 (add-hook 'vue-mode-hook #'lsp!)
+
+;; Doesn't actually work but should be mirrored in ~/.config/emacs/.local/straight/repos/vue-mode/vue-mode.el
+(after! vue-mode
+  (defconst vue--front-tag-lang-regex
+    (concat "<%s"                           ; The tag name
+            "\\(?:"                         ; Zero of more of...
+            "\\(?:\\s-+\\w+=[\"'].*?[\"']\\)" ; Any optional key-value pairs like type="foo/bar"
+            "\\|\\(?:\\s-+scoped\\)"          ; The optional "scoped" attribute
+            "\\|\\(?:\\s-+module\\)"          ; The optional "module" attribute
+            "\\|\\(?:\\s-+setup\\)"           ; The optional "setup" attribute
+            "\\)*"
+            "\\(?:\\s-+lang=[\"']%s[\"']\\)" ; The language specifier (required)
+            "\\(?:"                          ; Zero of more of...
+            "\\(?:\\s-+\\w+=[\"'].*?[\"']\\)" ; Any optional key-value pairs like type="foo/bar"
+            "\\|\\(?:\\s-+scoped\\)"          ; The optional "scoped" attribute
+            "\\|\\(?:\\s-+module\\)"          ; The optional "module" attribute
+            "\\|\\(?:\\s-+setup\\)"           ; The optional "setup" attribute
+            "\\)*"
+            " *>\n")))                            ; The end of the tag)
+
+(add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
 
 (after! rustic
   (add-hook #'rustic-mode-hook (lambda () (setq-local buffer-save-without-query t)))
@@ -323,16 +357,16 @@ information retrieved from files created by the keychain script."
    :map ein:notebook-mode-map
    :ni       "M-j"      #'ein:worksheet-goto-next-input-km
    :ni       "M-k"      #'ein:worksheet-goto-prev-input-km
-   :ni       "M-J"    #'ein:worksheet-move-cell-down-km
-   :ni       "M-K"    #'ein:worksheet-move-cell-up-km
+   :ni       "M-J"      #'ein:worksheet-move-cell-down-km
+   :ni       "M-K"      #'ein:worksheet-move-cell-up-km
    :ni       [S-return] #'ein:worksheet-execute-cell-and-goto-next-km
    :ni       [C-return] #'ein:worksheet-execute-cell-km
    :localleader
-   :desc "Save notebook"       "s"     #'ein:notebook-save-notebook-command-km
+   :desc "Save notebook"             "s"     #'ein:notebook-save-notebook-command-km
    (:prefix ("c" . "Cell")
     :desc "Insert cell above"        "a"     #'ein:worksheet-insert-cell-above-km
     :desc "Insert cell below"        "b"     #'ein:worksheet-insert-cell-below-km
-    :desc "Delete cell"         "d"     #'ein:worksheet-delete-cell
+    :desc "Delete cell"              "d"     #'ein:worksheet-delete-cell
     :desc "Clear cell output"        "l"     #'ein:worksheet-clear-output-km
     :desc "Paste cell"               "p"     #'ein:worksheet-yank-cell-km
     :desc "Copy cell"                "y"     #'ein:worksheet-copy-cell-km
