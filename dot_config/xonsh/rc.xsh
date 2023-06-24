@@ -1,5 +1,6 @@
-xontrib load argcomplete kitty vox autovox
+xontrib load argcomplete kitty
 xontrib load prompt_starship
+xontrib load vox autovox
 #xontrib load z
 xontrib load coreutils
 #xontrib load readable-traceback
@@ -12,14 +13,19 @@ xontrib load fzf-widgets
 #$VI_MODE = True
 $XONSH_SHOW_TRACEBACK = False
 
+$SHELL_TYPE='prompt_toolkit'
+
 from math import sqrt, log
 
 $XONSH_DEBUG = 0
 #
 source ~/.config/xonsh/env.xsh
 
+$XONSH_HISTORY_BACKEND = "sqlite"
+$XONSH_HISTORY_FILE = $XDG_DATA_HOME + '/xonsh' + '/xonsh-history.sqlite'
+
 # workaround https://github.com/xonsh/xonsh/issues/4409
-__import__('warnings').filterwarnings('ignore', 'There is no current event loop', DeprecationWarning, 'prompt_toolkit.eventloop.utils')
+#__import__('warnings').filterwarnings('ignore', 'There is no current event loop', DeprecationWarning, 'prompt_toolkit.eventloop.utils')
 
 # aliases
 aliases['l'] = "ls -a --color=auto"

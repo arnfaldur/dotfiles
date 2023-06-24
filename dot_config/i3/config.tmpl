@@ -248,6 +248,9 @@ exec redshift
 exec emacs --daemon
 exec --no-startup-id clipster -d
 exec aw-qt
+{{- if eq .chezmoi.hostname "Julius" }}
+exec setxkbmap -layout us,is -option grp:win_space_toggle
+{{- end }}
 
 # Keyboard map switcher
 #bindsym Mod4+space setxkbmap us
