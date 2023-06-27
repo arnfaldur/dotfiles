@@ -7,22 +7,18 @@ xontrib load coreutils
 xontrib load zoxide
 xontrib load fzf-widgets
 
-# source-zsh .config/zsh/.zshrc
-# source-zsh "echo loading xonsh foreign shell"
-
 #$VI_MODE = True
 $XONSH_SHOW_TRACEBACK = False
 
+$XONSH_HISTORY_BACKEND = "sqlite"
 $SHELL_TYPE='prompt_toolkit'
 
 from math import sqrt, log
 
 $XONSH_DEBUG = 0
-#
+
 source ~/.config/xonsh/env.xsh
 
-$XONSH_HISTORY_BACKEND = "sqlite"
-$XONSH_HISTORY_FILE = $XDG_DATA_HOME + '/xonsh' + '/xonsh-history.sqlite'
 
 # workaround https://github.com/xonsh/xonsh/issues/4409
 #__import__('warnings').filterwarnings('ignore', 'There is no current event loop', DeprecationWarning, 'prompt_toolkit.eventloop.utils')
@@ -38,9 +34,6 @@ aliases['ea'] = "exa --long --all"
 for i in range(9):
     aliases[f'et{i}'] = f"exa --long --tree --level={i}"
     aliases[f'ea{i}'] = f"exa --long --all --tree --level={i}"
-
-
-#aliases['reload'] = "source ~/.config/zsh/.zshrc"
 
 aliases['orgsave'] = "git commit -am @$(date -Iseconds)"
 
@@ -179,14 +172,6 @@ def inline_latex(args, stdin=None):
     cd @(prev_dir)
 #rm -r @(tmp_dir)
     return
-
-def entomb_workspaces():
-    for i in range(1,11):
-        i3-resurrect save -d ~/.local/share/i3/resurrect -n -w @(i)
-
-def resurrect_workspaces():
-    for i in range(1,11):
-        i3-resurrect restore -d ~/.local/share/i3/resurrect -n -w @(i)
 
 aliases['intex'] = inline_latex
 
