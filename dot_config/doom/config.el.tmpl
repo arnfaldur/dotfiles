@@ -389,6 +389,10 @@ information retrieved from files created by the keychain script."
    :localleader
    :desc "describe"   "d" #'racket-xp-describe))
 
+{{- if eq .chezmoi.hostname "Belgur" }}
+(load-file "/home/hugsun/apps/mfm/ULAM/share/emacs-lisp/ulam-mode.el")
+(add-to-list 'auto-mode-alist '("\\.ulam\\'" . ulam-mode))
+{{- end }}
 
 ;; (after! bison
 ;;   (setq bison-decl-token-column 4)
