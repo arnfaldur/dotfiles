@@ -45,7 +45,8 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'sanityinc-tomorrow-bright)
 ;; (setq doom-theme 'doom-tomorrow-night)
-(setq doom-theme 'ujelly)
+;; (setq doom-theme 'ujelly)
+(setq doom-theme 'catppuccin)
 ;; (setq doom-dracula-brighter-comments t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -173,13 +174,48 @@ information retrieved from files created by the keychain script."
         "<mouse-8>" #'better-jumper-jump-backward))
 
 
-
 (after! evil-snipe (evil-snipe-mode -1)
   (setq evil-snipe-scope 'visible))
 
+;; Formatting
+;; (apheleia-global-mode +1)
+(map!
+ :after apheleia
+ :leader
+ :prefix "c"
+ "f" #'apheleia-format-buffer)
+(after! apheleia
+  (setf (alist-get 'prettier apheleia-formatters)
+        '("prettier" "--stdin-filepath" filepath))
+  (setf (alist-get 'prettier-json apheleia-formatters)
+        '("prettier" "--stdin-filepath" filepath "--parser=json"))
+  (setf (alist-get 'prettier-typescript apheleia-formatters)
+        '("prettier" "--stdin-filepath" filepath "--parser=typescript"))
+  (setf (alist-get 'prettier-yaml apheleia-formatters)
+        '("prettier" "--stdin-filepath" filepath "--parser=yaml")))
+  ;; Doesn't work as is
+  ;; (setf (alist-get "\\.svelte\\'" apheleia-mode-alist)
+  ;;       'prettier-svelte)
+  ;; (setf (alist-get 'prettier-svelte apheleia-formatters)
+  ;;       '("prettier" "--stdin-filepath" filepath "--plugin prettier-plugin-svelte")))
+
+;; Completion popups
 (after! company
   (map!
    "C-q" #'company-show-doc-buffer))
+
+(after! company
+  ;; accept completion from copilot and fallback to company
+  (use-package! copilot
+    :hook (prog-mode . copilot-mode)
+    :bind (:map copilot-completion-map
+                ("<tab>" . 'copilot-accept-completion)
+                ("TAB" . 'copilot-accept-completion)
+                ("C-TAB" . 'copilot-accept-completion-by-word)
+                ("C-<tab>" . 'copilot-accept-completion-by-word))))
+
+(after! company-box
+  (setq company-box-doc-delay 0))
 
 (after! locate
   (setq locate-command "plocate"))
@@ -190,6 +226,9 @@ information retrieved from files created by the keychain script."
             tex-mode                    ; latexindent is broken
             latex-mode
             web-mode))
+
+
+(buffer-name-relative-mode)
 
 (global-activity-watch-mode)
 
@@ -299,7 +338,10 @@ information retrieved from files created by the keychain script."
 
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+;; (add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 (add-hook 'vue-mode-hook #'lsp!)
+(add-hook 'svelte-mode-hook #'lsp!)
+(add-hook 'web-mode-hook #'lsp!)
 
 ;; Doesn't actually work but should be mirrored in ~/.config/emacs/.local/straight/repos/vue-mode/vue-mode.el
 (after! vue-mode

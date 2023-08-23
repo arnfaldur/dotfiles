@@ -9,15 +9,22 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
-(package! bison-mode)
-(package! bnf-mode)
+;; (package! bison-mode)
+;; (package! bnf-mode)
 (package! activity-watch-mode)
 (package! graphviz-dot-mode)
 (package! xonsh-mode)
 (package! keychain-environment)
+(package! apheleia)
+
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 
 (package! vue-mode)
+(package! svelte-mode)
+
 (package! magit-gitflow)
+(package! buffer-name-relative)
 
 ;; (unpin! org-roam)
 (package! websocket)
@@ -26,6 +33,7 @@
 ;; Themes
 (package! color-theme-sanityinc-tomorrow)
 (package! ujelly-theme)
+(package! catppuccin-theme)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
