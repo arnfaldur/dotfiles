@@ -9,8 +9,6 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
-;; (package! bison-mode)
-;; (package! bnf-mode)
 (package! activity-watch-mode)
 (package! graphviz-dot-mode)
 (package! xonsh-mode)
