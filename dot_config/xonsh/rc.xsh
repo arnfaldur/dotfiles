@@ -35,6 +35,9 @@ for i in range(9):
     aliases[f'et{i}'] = f"exa --long --tree --level={i}"
     aliases[f'ea{i}'] = f"exa --long --all --tree --level={i}"
 
+
+aliases['cdir'] = "mkdir -p @($args) && cd @($args)"
+
 aliases['orgsave'] = "git commit -am @$(date -Iseconds)"
 
 aliases['pa'] = "@($args) --color=always | bat -p"
