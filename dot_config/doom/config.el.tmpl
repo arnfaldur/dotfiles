@@ -100,11 +100,7 @@
       :nvm "L" #'evil-end-of-line
 
       (:after evil-easymotion
-       :nm "s" evilem-map)
-      (:when (featurep! :completion ivy)
-       (:after ivy
-        :map ivy-minibuffer-map
-        "M-RET" #'ivy-immediate-done)))
+       :nm "s" evilem-map))
 
 (define-key evil-motion-state-map "zJ" #'evil-scroll-line-to-top)
 (define-key evil-motion-state-map "zK" #'evil-scroll-line-to-bottom)
