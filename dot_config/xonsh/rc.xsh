@@ -119,9 +119,14 @@ def setplanckkeymap():
 def setpreonickeymap():
     setxkbmap -layout is -device $(xinput -list | grep -i 'OLKB Preonic Keyboard' | awk '{print substr($5, 4)}')
 
+def setmoonlanderkeymap():
+    setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Technology Labs Moonlander Mark I\\s*id.*keyboard' | sed 's/.*id=\\([0-9]*\\).*/\\1/')
+
 def planck():
     setplanckkeymap(); resetrepeatrate()
 def preonic():
+    setplanckkeymap(); resetrepeatrate()
+def moonlander():
     setplanckkeymap(); resetrepeatrate()
 
 def _disable_device_by_name(name):
@@ -156,6 +161,7 @@ def dockedmode():
 
 resetrepeatrate()
 setkeymap()
+#setmoonlanderkeymap()
 
 def inline_latex(args, stdin=None):
     latex = args[0] if stdin is None else stdin
