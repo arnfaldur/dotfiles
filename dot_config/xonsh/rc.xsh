@@ -112,7 +112,7 @@ def setmousespeed(speed):
 def resetrepeatrate():
     xset r rate 256 32
 def setkeymap():
-    setxkbmap -layout is
+    setxkbmap -layout is,us -option grp:win_space_toggle
 def setplanckkeymap():
     setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Planck EZ Keyboard' | awk '{print substr($5, 4)}')
 
