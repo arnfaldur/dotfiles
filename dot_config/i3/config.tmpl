@@ -248,7 +248,7 @@ exec redshift
 exec emacs --daemon
 exec --no-startup-id clipster -d
 exec aw-qt
-{{- if eq .chezmoi.hostname "Julius" }}
+{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
 exec setxkbmap -layout us,is -option grp:win_space_toggle
 {{- end }}
 
@@ -340,3 +340,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86AudioRaiseVolume playerctl volume + doesn't seem to work with spotify
 #bindsym XF86AudioLowerVolume playerctl volume -
 bindsym XF86AudioStop exec playerctl stop
+bindsym XF86MonBrightnessUp   		exec xbacklight -inc 5           && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessUp   	exec xbacklight -inc 1           && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown 		exec xbacklight -dec 5           && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessDown 	exec xbacklight -dec 1           && pkill -SIGRTMIN+10 i3blocks

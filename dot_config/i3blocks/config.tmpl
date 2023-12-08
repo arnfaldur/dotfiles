@@ -27,7 +27,7 @@
 command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=32
 markup=none
-{{ if eq .chezmoi.hostname "Julius" -}}
+{{ if eq .chezmoi.hostname "Julius" "snerpa" -}}
 # Display brightness
 [brightness]
 label=🖵
@@ -110,7 +110,7 @@ label=🖧
 #instance=eth0
 interval=5
 
-{{- if eq .chezmoi.hostname "Julius" }}
+{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
 # Battery indicator
 #
 # The battery instance defaults to 0.
