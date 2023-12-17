@@ -322,6 +322,10 @@ bindsym $os+F7 exec amixer set Master 5%+       && pkill -SIGRTMIN+10 i3blocks
 bindsym $os+F8 exec amixer set Master 5%-       && pkill -SIGRTMIN+10 i3blocks
 bindsym $os+Shift+F7 exec amixer set Master 1%+ && pkill -SIGRTMIN+10 i3blocks
 bindsym $os+Shift+F8 exec amixer set Master 1%- && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+       && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-       && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86AudioRaiseVolume exec amixer set Master 1%+ && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86AudioLowerVolume exec amixer set Master 1%- && pkill -SIGRTMIN+10 i3blocks
 
 bindsym Print exec cd $HOME/pictures/screenshots/ && maim -m 1 `date +"%Y-%m-%d--%H-%M-%S-%3N".png` && xclip -sel clip -t image/png `ls -t | head -n1`
 
