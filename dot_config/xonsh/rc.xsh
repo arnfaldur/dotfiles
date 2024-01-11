@@ -106,6 +106,12 @@ def pacsizes():
 def pacremoveorphans():
     sudo pacman -Rns @$(pacman -Qtdq)
 
+def _get_device_ids(names, device_type):
+    if type(names) is str:
+        names = [names]
+    name_regex = '\\(' + "\\|".join(names) + '\\)'
+    return $(xinput -list | grep -i f'{name_regex}\\s*id.*{device_type}' | sed 's/.*id=\\([0-9]*\\).*/\\1/').split()
+
 def setmousespeed(speed):
     mouse_name = "Logitech G700s Rechargeable Gaming Mouse"
     xinput --set-prop @(mouse_name) 'Coordinate Transformation Matrix' @(speed) 0 0 0 @(speed) 0 0 0 1
@@ -113,21 +119,20 @@ def resetrepeatrate():
     xset r rate 256 32
 def setkeymap():
     setxkbmap -layout is,us -option grp:win_space_toggle
+
 def setplanckkeymap():
     setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Planck EZ Keyboard' | awk '{print substr($5, 4)}')
-
 def setpreonickeymap():
     setxkbmap -layout is -device $(xinput -list | grep -i 'OLKB Preonic Keyboard' | awk '{print substr($5, 4)}')
-
 def setmoonlanderkeymap():
     setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Technology Labs Moonlander Mark I\\s*id.*keyboard' | sed 's/.*id=\\([0-9]*\\).*/\\1/')
 
 def planck():
     setplanckkeymap(); resetrepeatrate()
 def preonic():
-    setplanckkeymap(); resetrepeatrate()
+    setpreonickeymap(); resetrepeatrate()
 def moonlander():
-    setplanckkeymap(); resetrepeatrate()
+    setmoonlanderkeymap(); resetrepeatrate()
 
 def _disable_device_by_name(name):
     xinput disable @($(xinput list | grep -i @(name) | awk '{print substr($0, match($0, "id=") + 3, 2)}').strip())

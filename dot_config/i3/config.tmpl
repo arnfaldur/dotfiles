@@ -145,8 +145,25 @@ bindsym $os+Shift+$alt+r exec "entomb_workspaces()"
 #bindsym $os+Shift+$alt+Return exec "for i in 1 2 3 4 5 6 7 8 9 10; do i3-resurrect restore -n -w $i; done; "
 bindsym $os+Shift+$alt+Return exec "resurrect_workspaces()"
 # exit i3 (logs you out of your X session)
-bindsym $os+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $os+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #bindsym $os+Shift+e exec i3-msg exit
+bindsym $os+Shift+e mode eXit
+
+mode "eXit" {
+  bindsym x mode exIt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+mode "exIt" {
+  bindsym i mode exiT
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+mode "exiT" {
+  bindsym t exec i3-msg exit
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
 bindsym $os+n exec pkill -USR1 redshift
 mode "hibernate" {
@@ -174,7 +191,7 @@ mode "windos" {
 }
 
 mode "system" {
-  bindsym l exec zsh ~/.config/i3/lock, mode "default"
+  bindsym l exec sh ~/.config/i3/lock, mode "default"
 
   bindsym h mode hibernate
   bindsym r mode reboot
