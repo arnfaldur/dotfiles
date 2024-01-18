@@ -134,6 +134,7 @@ def preonic():
 def moonlander():
     setmoonlanderkeymap(); resetrepeatrate()
 
+{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
 _trackpad_names = [
     "Elan Touchpad",
     "ELAN06FA:00 04F3:327E Touchpad"
@@ -167,7 +168,7 @@ def dockedmode():
     resetrepeatrate()
     disabletrackpad()
     disablekeyboard()
-
+{{- end }}
 
 resetrepeatrate()
 setkeymap()

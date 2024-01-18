@@ -365,8 +365,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec playerctl stop
 
 {{- if eq .chezmoi.hostname "Julius" "snerpa" }}
-bindsym XF86MonBrightnessUp   		exec xbacklight -inc 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym Shift+XF86MonBrightnessUp   	exec xbacklight -inc 1           && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86MonBrightnessDown 		exec xbacklight -dec 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym Shift+XF86MonBrightnessDown 	exec xbacklight -dec 1           && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp   		exec xbacklight -ctrl intel_backlight -inc 5           && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessUp   	exec xbacklight -ctrl intel_backlight -inc 1           && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown 		exec xbacklight -ctrl intel_backlight -dec 5           && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessDown 	exec xbacklight -ctrl intel_backlight -dec 1           && pkill -SIGRTMIN+10 i3blocks
 {{- end }}
