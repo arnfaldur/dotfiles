@@ -134,24 +134,29 @@ def preonic():
 def moonlander():
     setmoonlanderkeymap(); resetrepeatrate()
 
-def _disable_device_by_name(name):
-    xinput disable @($(xinput list | grep -i @(name) | awk '{print substr($0, match($0, "id=") + 3, 2)}').strip())
-def _enable_device_by_name(name):
-    xinput enable @($(xinput list | grep -i @(name) | awk '{print substr($0, match($0, "id=") + 3, 2)}').strip())
-
+_trackpad_names = [
+    "Elan Touchpad",
+    "ELAN06FA:00 04F3:327E Touchpad"
+]
 def disabletrackpad():
-    _disable_device_by_name("Elan Touchpad")
+    for ide in _get_device_ids(_trackpad_names, "pointer"):
+        xinput disable @(ide)
 def enabletrackpad():
-    _enable_device_by_name("Elan Touchpad")
+    for ide in _get_device_ids(_trackpad_names, "pointer"):
+        xinput enable @(ide)
 
+_keyboard_names = [
+    'AT Translated Set 2 keyboard',
+    'Asus WMI hotkeys',
+    'Power Button',
+    'ITE Tech. Inc. ITE Device(8258) Keyboard',
+]
 def disablekeyboard():
-    _disable_device_by_name('AT Translated Set 2 keyboard')
-    _disable_device_by_name('Asus WMI hotkeys')
-    _disable_device_by_name('Power Button')
+    for ide in _get_device_ids(_keyboard_names, "keyboard"):
+        xinput disable @(ide)
 def enablekeyboard():
-    _enable_device_by_name('AT Translated Set 2 keyboard')
-    _enable_device_by_name('Asus WMI hotkeys')
-    _enable_device_by_name('Power Button')
+    for ide in _get_device_ids(_keyboard_names, "keyboard"):
+        xinput enable @(ide)
 
 def portablemode():
     enabletrackpad()

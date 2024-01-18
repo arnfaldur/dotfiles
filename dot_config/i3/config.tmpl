@@ -240,6 +240,8 @@ bindsym $os+Shift+v  exec --no-startup-id roficlip
 
 bindsym $os+p        exec --no-startup-id bwmenu -c 30 --auto-lock 86400
 
+bindsym $os+Tab      exec --no-startup-id wmfocus --halign center --valign center
+
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
@@ -361,7 +363,10 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86AudioRaiseVolume playerctl volume + doesn't seem to work with spotify
 #bindsym XF86AudioLowerVolume playerctl volume -
 bindsym XF86AudioStop exec playerctl stop
+
+{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
 bindsym XF86MonBrightnessUp   		exec xbacklight -inc 5           && pkill -SIGRTMIN+10 i3blocks
 bindsym Shift+XF86MonBrightnessUp   	exec xbacklight -inc 1           && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86MonBrightnessDown 		exec xbacklight -dec 5           && pkill -SIGRTMIN+10 i3blocks
 bindsym Shift+XF86MonBrightnessDown 	exec xbacklight -dec 1           && pkill -SIGRTMIN+10 i3blocks
+{{- end }}
