@@ -121,11 +121,14 @@ def setkeymap():
     setxkbmap -layout is,us -option grp:win_space_toggle
 
 def setplanckkeymap():
-    setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Planck EZ Keyboard' | awk '{print substr($5, 4)}')
+    for ide in _get_device_ids(['ZSA Planck EZ Keyboard'], "keyboard"):
+        setxkbmap -layout is -device @(ide)
 def setpreonickeymap():
-    setxkbmap -layout is -device $(xinput -list | grep -i 'OLKB Preonic Keyboard' | awk '{print substr($5, 4)}')
+    for ide in _get_device_ids(['OLKB Preonic'], "keyboard"):
+        setxkbmap -layout is -device @(ide)
 def setmoonlanderkeymap():
-    setxkbmap -layout is -device $(xinput -list | grep -i 'ZSA Technology Labs Moonlander Mark I\\s*id.*keyboard' | sed 's/.*id=\\([0-9]*\\).*/\\1/')
+    for ide in _get_device_ids(['ZSA Technology Labs Moonlander Mark I'], "keyboard"):
+        setxkbmap -layout is -device @(ide)
 
 def planck():
     setplanckkeymap(); resetrepeatrate()
@@ -170,8 +173,9 @@ def dockedmode():
     disablekeyboard()
 {{- end }}
 
-resetrepeatrate()
-setkeymap()
+
+#resetrepeatrate()
+#setkeymap()
 #setmoonlanderkeymap()
 
 def inline_latex(args, stdin=None):

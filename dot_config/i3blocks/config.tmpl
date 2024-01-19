@@ -31,7 +31,7 @@ markup=none
 # Display brightness
 [brightness]
 label=🖵
-command=echo "$(xbacklight -get | awk -F '.' '{print $1}')%"
+command=echo "$(xbacklight -ctrl intel_backlight -get | awk -F '.' '{print $1}')%"
 interval=once
 signal=10
 {{- end }}
