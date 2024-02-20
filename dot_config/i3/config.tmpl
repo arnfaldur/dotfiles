@@ -178,6 +178,12 @@ mode "reboot" {
   bindsym Escape mode "default"
 }
 
+mode "poweroff" {
+  bindsym o exec "systemctl poweroff", mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
 mode "suspend" {
   bindsym u exec "systemctl suspend", mode "default"
   bindsym Return mode "default"
@@ -196,6 +202,7 @@ mode "system" {
   bindsym h mode hibernate
   bindsym r mode reboot
   bindsym s mode suspend
+  bindsym p mode poweroff
   bindsym w mode windos
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -322,15 +329,20 @@ bar {
 
 # Misc
 
+# Floating windows
 for_window [class=".*Qt.*"] floating enable
 for_window [class=".*Skil.*"] floating enable
 for_window [title=".*ImageView.*"] floating enable
 for_window [title="Processing.jl"] floating enable
 for_window [title="AutoWar"] floating enable
+for_window [title="Chess Roguelike"] floating enable
 
 # open intended popups as floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+
+# Workspace assignments
+assign [title="Chess Roguelite"] → number 4
 
 {{- if eq .chezmoi.hostname "Julius" "snerpa" }}
 bindsym $os+F6                           exec xbacklight -ctrl intel_backlight -inc 5 j   && pkill -SIGRTMIN+10 i3blocks

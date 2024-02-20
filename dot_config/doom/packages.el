@@ -20,6 +20,7 @@
 
 (package! vue-mode)
 (package! svelte-mode)
+(package! nushell-mode)
 
 (package! magit-gitflow)
 (package! buffer-name-relative)

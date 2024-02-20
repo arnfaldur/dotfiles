@@ -16,7 +16,7 @@ truncate_to_repo = false
 fish_style_pwd_dir_length = 2
 
 [line_break]
-disabled = true
+disabled = false
 
 [git_branch]
 format = "[$symbol$branch]($style) "

@@ -207,6 +207,7 @@ if p'/tmp/keychain.sh'.exists():
     source-bash /tmp/keychain.sh
 
 execx($(mise activate xonsh))
+execx($(atuin init xonsh))
 
 @events.autovox_policy
 def venv_policy(path, **_):
