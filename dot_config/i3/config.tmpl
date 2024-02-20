@@ -274,7 +274,7 @@ exec setxkbmap -layout us,is -option grp:win_space_toggle
 # Keyboard map switcher
 #bindsym Mod4+space setxkbmap us
 
-mouse_warping none
+mouse_warping output
 
 # Workspace assignments
 
@@ -332,19 +332,32 @@ for_window [title="AutoWar"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
-bindsym $os+F2 exec xbacklight -inc 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+F1 exec xbacklight -dec 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+Shift+F2 exec xbacklight -inc 1     && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+Shift+F1 exec xbacklight -dec 1     && pkill -SIGRTMIN+10 i3blocks
+{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
+bindsym $os+F6                           exec xbacklight -ctrl intel_backlight -inc 5 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+F5                           exec xbacklight -ctrl intel_backlight -dec 5 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+Shift+F6                     exec xbacklight -ctrl intel_backlight -inc 1 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+Shift+F5                     exec xbacklight -ctrl intel_backlight -dec 1 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp              exec xbacklight -ctrl intel_backlight -inc 5 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessUp        exec xbacklight -ctrl intel_backlight -inc 1 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown            exec xbacklight -ctrl intel_backlight -dec 5 j   && pkill -SIGRTMIN+10 i3blocks
+bindsym Shift+XF86MonBrightnessDown      exec xbacklight -ctrl intel_backlight -dec 1 j   && pkill -SIGRTMIN+10 i3blocks
+{{- end }}
 
-bindsym $os+F7 exec amixer set Master 5%+       && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+F8 exec amixer set Master 5%-       && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+Shift+F7 exec amixer set Master 1%+ && pkill -SIGRTMIN+10 i3blocks
-bindsym $os+Shift+F8 exec amixer set Master 1%- && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+F3 exec amixer set Master 5%+       && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+F2 exec amixer set Master 5%-       && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+Shift+F3 exec amixer set Master 1%+ && pkill -SIGRTMIN+10 i3blocks
+bindsym $os+Shift+F2 exec amixer set Master 1%- && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+       && pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-       && pkill -SIGRTMIN+10 i3blocks
 bindsym Shift+XF86AudioRaiseVolume exec amixer set Master 1%+ && pkill -SIGRTMIN+10 i3blocks
 bindsym Shift+XF86AudioLowerVolume exec amixer set Master 1%- && pkill -SIGRTMIN+10 i3blocks
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioRaiseVolume playerctl volume + doesn't seem to work with spotify
+#bindsym XF86AudioLowerVolume playerctl volume -
+bindsym XF86AudioStop exec playerctl stop
 
 bindsym Print exec cd $HOME/pictures/screenshots/ && maim -m 1 `date +"%Y-%m-%d--%H-%M-%S-%3N".png` && xclip -sel clip -t image/png `ls -t | head -n1`
 
@@ -356,17 +369,3 @@ bindsym $os+Print exec cd $HOME/pictures/screenshots/ && maim -s -m 1 `date +"%Y
 #bindsym Print exec scrot '%Y-%m-%d-%H%M%S_$wx$h.png' -e 'mv $f ~/Pictures/screenshots/'
 # scrot & gimp - current window or rectangle
 #bindsym Shift+Print exec scrot '%Y-%m-%d-%H%M%S_$wx$h.png' -u -e 'mv $f ~/Pictures/screenshots/'
-
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-#bindsym XF86AudioRaiseVolume playerctl volume + doesn't seem to work with spotify
-#bindsym XF86AudioLowerVolume playerctl volume -
-bindsym XF86AudioStop exec playerctl stop
-
-{{- if eq .chezmoi.hostname "Julius" "snerpa" }}
-bindsym XF86MonBrightnessUp   		exec xbacklight -ctrl intel_backlight -inc 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym Shift+XF86MonBrightnessUp   	exec xbacklight -ctrl intel_backlight -inc 1           && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86MonBrightnessDown 		exec xbacklight -ctrl intel_backlight -dec 5           && pkill -SIGRTMIN+10 i3blocks
-bindsym Shift+XF86MonBrightnessDown 	exec xbacklight -ctrl intel_backlight -dec 1           && pkill -SIGRTMIN+10 i3blocks
-{{- end }}
