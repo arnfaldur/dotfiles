@@ -18,4 +18,5 @@ $env.PATH = [
     /home/hugsun/,
 ]
 
+source ~/.config/nushell/env/xonsh-migration.nu
 source ~/.config/nushell/env/nu-env.nu
