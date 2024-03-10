@@ -376,6 +376,9 @@ information retrieved from files created by the keychain script."
 ;;  :desc "Unfold paragraph" "F"   #'TeX-fold-clearout-paragraph
 ;;  :desc "Unfold buffer"    "C-f" #'TeX-fold-clearout-buffer)
 
+(after! lsp-mode
+  (setq lsp-auto-execute-action nil))
+
 (after! lsp-clangd
   (set-lsp-priority! 'clangd 2)
   (setq lsp-clients-clangd-args

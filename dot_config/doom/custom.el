@@ -6,6 +6,132 @@
  '(TeX-clean-confirm nil)
  '(ansi-color-names-vector
    ["#282828" "#fb4934" "#b8bb26" "#fabd2f" "#83a598" "#cc241d" "#8ec07c" "#ebdbb2"])
+ '(apheleia-formatters
+   '((astyle "astyle"
+      (apheleia-formatters-locate-file "--options" ".astylerc"))
+     (asmfmt "asmfmt")
+     (bean-format "bean-format")
+     (beautysh "beautysh"
+      (apheleia-formatters-indent "--tab" "--indent-size" 'sh-basic-offset)
+      "-")
+     (black "black"
+      (when
+          (apheleia-formatters-extension-p "pyi")
+        "--pyi")
+      (apheleia-formatters-fill-column "--line-length")
+      "-")
+     (brittany "brittany")
+     (buildifier "buildifier")
+     (caddyfmt "caddy" "fmt" "-")
+     (clang-format "clang-format" "-assume-filename"
+      (or
+       (apheleia-formatters-local-buffer-file-name)
+       (apheleia-formatters-mode-extension)
+       ".c"))
+     (cmake-format "cmake-format" "-")
+     (crystal-tool-format "crystal" "tool" "format" "-")
+     (css-beautify "css-beautify" "--file" "-" "--end-with-newline"
+      (apheleia-formatters-indent "--indent-with-tabs" "--indent-size"))
+     (dart-format "dart" "format")
+     (denofmt "deno" "fmt" "-")
+     (denofmt-js "deno" "fmt" "-" "--ext" "js")
+     (denofmt-json "deno" "fmt" "-" "--ext" "json")
+     (denofmt-jsonc "deno" "fmt" "-" "--ext" "jsonc")
+     (denofmt-jsx "deno" "fmt" "-" "--ext" "jsx")
+     (denofmt-md "deno" "fmt" "-" "--ext" "md")
+     (denofmt-ts "deno" "fmt" "-" "--ext" "ts")
+     (denofmt-tsx "deno" "fmt" "-" "--ext" "tsx")
+     (elm-format "elm-format" "--yes" "--stdin")
+     (fish-indent "fish_indent")
+     (fourmolu "fourmolu")
+     (gawk "gawk" "-f" "-" "--pretty-print=-")
+     (gofmt "gofmt")
+     (gofumpt "gofumpt")
+     (goimports "goimports")
+     (google-java-format "google-java-format" "-")
+     (hclfmt "hclfmt")
+     (html-beautify "html-beautify" "--file" "-" "--end-with-newline"
+      (apheleia-formatters-indent "--indent-with-tabs" "--indent-size"))
+     (html-tidy "tidy" "--quiet" "yes" "--tidy-mark" "no" "--vertical-space" "yes" "-indent"
+      (when
+          (derived-mode-p 'nxml-mode)
+        "-xml")
+      (apheleia-formatters-indent "--indent-with-tabs" "--indent-spaces")
+      (apheleia-formatters-fill-column "-wrap"))
+     (isort "isort" "-")
+     (js-beautify "js-beautify" "--file" "-" "--end-with-newline"
+      (apheleia-formatters-indent "--indent-with-tabs" "--indent-size"))
+     (jq "jq" "." "-M"
+      (apheleia-formatters-indent "--tab" "--indent"))
+     (lisp-indent . apheleia-indent-lisp-buffer)
+     (ktlint "ktlint" "--log-level=none" "--stdin" "-F" "-")
+     (latexindent "latexindent" "--logfile=/dev/null")
+     (mix-format "apheleia-mix" "format" "-")
+     (nixfmt "nixfmt")
+     (ocamlformat "ocamlformat" "-" "--name" filepath "--enable-outside-detected-project")
+     (ormolu "ormolu")
+     (perltidy "perltidy" "--quiet" "--standard-error-output"
+      (apheleia-formatters-indent "-t" "-i")
+      (apheleia-formatters-fill-column "-l"))
+     (pgformatter "pg_format"
+      (apheleia-formatters-indent "--tabs" "--spaces" 'tab-width)
+      (apheleia-formatters-fill-column "--wrap-limit"))
+     (phpcs "apheleia-phpcs")
+     (prettier "prettier" "--stdin-filepath" filepath)
+     (prettier-css "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=css"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-html "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=html"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-graphql "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=graphql"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-javascript "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=babel-flow"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-json "prettier" "--stdin-filepath" filepath "--parser=json")
+     (prettier-markdown "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=markdown"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-ruby "apheleia-npx" "prettier" "--stdin-filepath" filepath "--plugin=@prettier/plugin-ruby" "--parser=ruby"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-scss "apheleia-npx" "prettier" "--stdin-filepath" filepath "--parser=scss"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-svelte "apheleia-npx" "prettier" "--stdin-filepath" filepath "--plugin=prettier-plugin-svelte" "--parser=svelte"
+      (apheleia-formatters-js-indent "--use-tabs" "--tab-width"))
+     (prettier-typescript "prettier" "--stdin-filepath" filepath "--parser=typescript")
+     (prettier-yaml "prettier" "--stdin-filepath" filepath "--parser=yaml")
+     (purs-tidy "apheleia-npx" "purs-tidy" "format")
+     (robotidy "robotidy" "--no-color" "-"
+      (apheleia-formatters-indent nil "--indent")
+      (apheleia-formatters-fill-column "--line-length"))
+     (rubocop "rubocop" "--stdin" filepath "--auto-correct" "--stderr" "--format" "quiet" "--fail-level" "fatal")
+     (ruby-standard "standardrb" "--stdin" filepath "--fix" "--stderr" "--format" "quiet" "--fail-level" "fatal")
+     (ruff "ruff" "format" "--silent"
+      (apheleia-formatters-fill-column "--line-length")
+      "--stdin-filename" filepath "-")
+     (shfmt "shfmt" "-filename" filepath "-ln"
+      (cl-case
+          (bound-and-true-p sh-shell)
+        (sh "posix")
+        (t "bash"))
+      (when apheleia-formatters-respect-indent-level
+        (list "-i"
+              (number-to-string
+               (cond
+                (indent-tabs-mode 0)
+                ((boundp 'sh-basic-offset)
+                 sh-basic-offset)
+                (t 4)))))
+      "-")
+     (rufo "rufo" "--filename" filepath "--simple-exit")
+     (stylua "stylua" "-")
+     (rustfmt "rustfmt" "--edition" "2021" "--quiet" "--emit" "stdout")
+     (terraform "terraform" "fmt" "-")
+     (xmllint "xmllint" "--format" "-")
+     (yapf "yapf")
+     (yq-csv "yq" "--prettyPrint" "--no-colors" "--input-format" "csv" "--output-format" "csv")
+     (yq-json "yq" "--prettyPrint" "--no-colors" "--input-format" "json" "--output-format" "json")
+     (yq-properties "yq" "--prettyPrint" "--no-colors" "--input-format" "props" "--output-format" "props")
+     (yq-tsv "yq" "--prettyPrint" "--no-colors" "--input-format" "tsv" "--output-format" "tsv")
+     (yq-xml "yq" "--prettyPrint" "--no-colors" "--input-format" "xml" "--output-format" "xml")
+     (yq-yaml "yq" "--prettyPrint" "--no-colors" "--no-doc" "--input-format" "yaml" "--output-format" "yaml")))
  '(custom-safe-themes
    '("2b3f1e6abe0f02ff73d95dca04901bdbc2ecebe80fa453eded34fa39c8b050cb" "835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "7eea50883f10e5c6ad6f81e153c640b3a288cd8dc1d26e4696f7d40f754cc703" default))
  '(evil-move-beyond-eol t)
